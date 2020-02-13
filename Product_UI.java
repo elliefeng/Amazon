@@ -30,26 +30,36 @@ public class Product_UI extends Amazon_UI {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Image Goes Here");
-		lblNewLabel.setBackground(Color.PINK);
-		lblNewLabel.setBounds(28, 31, 132, 138);
-		getContentPane().add(lblNewLabel);
+		JLabel lblImage = new JLabel("Image Goes Here");
+		lblImage.setHorizontalAlignment(JLabel. CENTER);
+		lblImage.setOpaque(true);
+		lblImage.setBackground(Color.PINK);
+		lblImage.setBounds(28, 31, 132, 138);
+		getContentPane().add(lblImage);
 		
-		JLabel lblNewLabel_1 = new JLabel("Product Name: Shirt");
-		lblNewLabel_1.setBounds(193, 20, 212, 39);
-		getContentPane().add(lblNewLabel_1);
+		JLabel lblName = new JLabel("Product Name: Shirt");
+		lblName.setOpaque(true);
+		lblName.setBackground(new Color(240, 230, 140));
+		lblName.setBounds(193, 20, 212, 39);
+		getContentPane().add(lblName);
 		
 		JLabel lblProductPrice = new JLabel("Product Price: $19.99");
+		lblProductPrice.setOpaque(true);
+		lblProductPrice.setBackground(new Color(240, 230, 140));
 		lblProductPrice.setBounds(193, 71, 212, 39);
 		getContentPane().add(lblProductPrice);
 		
 		JLabel lblProductSize = new JLabel("Product Size: M");
+		lblProductSize.setOpaque(true);
+		lblProductSize.setBackground(new Color(240, 230, 140));
 		lblProductSize.setBounds(193, 122, 212, 39);
 		getContentPane().add(lblProductSize);
 		
-		JButton btnNewButton = new JButton("Add to Cart");
-		btnNewButton.setBounds(184, 173, 217, 45);
-		getContentPane().add(btnNewButton);
+		JButton btnAddCart = new JButton("Add to Cart");
+		btnAddCart.setOpaque(true);
+		btnAddCart.setBackground(new Color(240, 230, 140));
+		btnAddCart.setBounds(184, 173, 217, 45);
+		getContentPane().add(btnAddCart);
 		
 		
 		

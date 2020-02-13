@@ -9,6 +9,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import java.awt.List;
 
 public class Product_UI extends Amazon_UI {
 	
@@ -37,31 +39,54 @@ public class Product_UI extends Amazon_UI {
 		lblImage.setBounds(28, 31, 132, 138);
 		getContentPane().add(lblImage);
 		
-		JLabel lblName = new JLabel("Product Name: Shirt");
+		String name = "Shirt";
+		JLabel lblName = new JLabel("Product Name: " + name);
 		lblName.setOpaque(true);
 		lblName.setBackground(new Color(240, 230, 140));
-		lblName.setBounds(193, 20, 212, 39);
+		lblName.setBounds(28, 181, 132, 28);
 		getContentPane().add(lblName);
 		
-		JLabel lblProductPrice = new JLabel("Product Price: $19.99");
+		double price = 19.99;
+		JLabel lblProductPrice = new JLabel("Product Price: $" + price);
 		lblProductPrice.setOpaque(true);
 		lblProductPrice.setBackground(new Color(240, 230, 140));
-		lblProductPrice.setBounds(193, 71, 212, 39);
+		lblProductPrice.setBounds(193, 19, 212, 28);
 		getContentPane().add(lblProductPrice);
 		
-		JLabel lblProductSize = new JLabel("Product Size: M");
-		lblProductSize.setOpaque(true);
-		lblProductSize.setBackground(new Color(240, 230, 140));
-		lblProductSize.setBounds(193, 122, 212, 39);
-		getContentPane().add(lblProductSize);
+		JLabel lblRandomAttribute = new JLabel("Random Attribute: ");
+		lblRandomAttribute.setOpaque(true);
+		lblRandomAttribute.setBackground(new Color(240, 230, 140));
+		lblRandomAttribute.setBounds(193, 59, 212, 28);
+		getContentPane().add(lblRandomAttribute);
 		
 		JButton btnAddCart = new JButton("Add to Cart");
 		btnAddCart.setOpaque(true);
 		btnAddCart.setBackground(new Color(240, 230, 140));
-		btnAddCart.setBounds(184, 173, 217, 45);
+		btnAddCart.setBounds(193, 188, 217, 45);
 		getContentPane().add(btnAddCart);
 		
+		int stock = 1;
+		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + stock);
+		lblRemainingStock.setOpaque(true);
+		lblRemainingStock.setBackground(new Color(240, 230, 140));
+		lblRemainingStock.setBounds(193, 96, 212, 28);
+		getContentPane().add(lblRemainingStock);
 		
+		String[] quantity = {"1","2","3","4","5"};
+		JComboBox quantityList = new JComboBox(quantity);
+		quantityList.setBounds(195, 143, 73, 44);
+		getContentPane().add(quantityList);
+		JLabel lblNewLabel = new JLabel("Quantity");
+		lblNewLabel.setBounds(203, 130, 54, 16);
+		getContentPane().add(lblNewLabel);
+		
+		String[] size = {"S","M","L","XL"};
+		JComboBox sizeList1 = new JComboBox(size);
+		sizeList1.setBounds(321, 143, 73, 44);
+		getContentPane().add(sizeList1);
+		JLabel lblNewLabel_1 = new JLabel("Size");
+		lblNewLabel_1.setBounds(343, 130, 25, 16);
+		getContentPane().add(lblNewLabel_1);
 		
 	}
 }

@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.EventQueue;
+import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,7 +14,8 @@ import javax.swing.JComboBox;
 import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JTextPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -23,6 +25,7 @@ public class Product_UI extends Amazon_UI {
 	private static double price;
 	private static String attribute;
 	private static int stock=5;
+	private JLabel lblImage;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -46,13 +49,12 @@ public class Product_UI extends Amazon_UI {
 		setBounds(100, 100, 450, 300);
 		setBackground(Color.ORANGE);
 		getContentPane().setLayout(null);
-		
-		JLabel lblImage = new JLabel("Image Goes Here");
-		lblImage.setHorizontalAlignment(JLabel. CENTER);
-		lblImage.setOpaque(true);
-		lblImage.setBackground(Color.PINK);
-		lblImage.setBounds(28, 31, 132, 138);
-		getContentPane().add(lblImage);
+	    
+	    lblImage = new JLabel("");
+	    java.awt.Image image = new ImageIcon("nike.png").getImage();
+	    lblImage.setIcon(new ImageIcon(image));
+	    lblImage.setBounds(28,31, 135, 159);
+	    getContentPane().add(lblImage);
 		
 		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + stock);
 		lblRemainingStock.setOpaque(true);

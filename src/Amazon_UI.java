@@ -77,7 +77,7 @@ public class Amazon_UI extends JFrame {
 		mnClothing.add(mntmShirt);
 		mntmShirt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Clothing_UI frame = new Clothing_UI("Shirt",19.99,"Red");
+				Clothing_UI frame = new Clothing_UI("Shirt",19.99,"Red","nike.png");
 				frame.setVisible(true);
 			}
 		});
@@ -194,11 +194,11 @@ public class Amazon_UI extends JFrame {
 			}
 		});*/
 		
-		JLabel lblAmazon = new JLabel("Welcome to Amazon!");
+		/*JLabel lblAmazon = new JLabel("Welcome to Amazon!");
 		lblAmazon.setOpaque(true);
 		lblAmazon.setBackground(Color.ORANGE);
 		lblAmazon.setBounds(147, 17, 137, 78);
-		getContentPane().add(lblAmazon);
+		getContentPane().add(lblAmazon);*/ 
 		
 		
 	}

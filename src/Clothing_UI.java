@@ -1,5 +1,13 @@
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -9,16 +17,18 @@ import javax.swing.JTextField;
 
 public class Clothing_UI extends Product_UI{
 	
-	public static String name;
-	public static double price;
-	public static String color;
+	private static String name;
+	private static double price;
+	private static String color;
+	private static JLabel image;
+	
 	private static final long serialVersionUID = 1048257216723871342L;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Clothing_UI frame = new Clothing_UI(name, price, color);
+					Clothing_UI frame = new Clothing_UI(name, price, color, image);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -27,7 +37,7 @@ public class Clothing_UI extends Product_UI{
 		});
 	}
 	
-	public Clothing_UI(String name, double price, String color) {
+	public Clothing_UI(String name, double price, String color, JLabel image) {
 		super(name, price, color);
 		/*this.name = name;
 		this.price = price;
@@ -37,12 +47,12 @@ public class Clothing_UI extends Product_UI{
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 		
-		JLabel lblImage = new JLabel("Image Goes Here");
-		lblImage.setHorizontalAlignment(JLabel. CENTER);
-		lblImage.setOpaque(true);
-		lblImage.setBackground(Color.PINK);
+		JLabel lblImage = new JLabel("");
+		lblImage = new JLabel("");
+	    java.awt.Image icon = new ImageIcon(/*image*/).getImage();
+	    lblImage.setIcon(new ImageIcon(icon));
+	    getContentPane().add(lblImage);
 		lblImage.setBounds(28, 31, 132, 138);
-		getContentPane().add(lblImage);
 		
 		JLabel txtrProduct = new JLabel();
 		txtrProduct.setText("Product: " + name);

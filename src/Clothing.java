@@ -1,3 +1,5 @@
+package src;
+
 public class Clothing extends Product {
 	double myPrice;
 	//String mySize;

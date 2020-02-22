@@ -1,3 +1,5 @@
+package src;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.image.BufferedImage;

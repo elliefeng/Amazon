@@ -1,3 +1,5 @@
+package src;
+
 public class Home extends Product{
 	
 	double myPrice;

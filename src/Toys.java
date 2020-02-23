@@ -31,9 +31,7 @@ public class Toys extends Product {
 		return myType;
 		
 	}
-public void print()
-{
-	System.out.println("hi");
-}
+
+	
 	
 }

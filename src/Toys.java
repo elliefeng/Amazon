@@ -29,7 +29,11 @@ public class Toys extends Product {
 	
 	public String getType() {
 		return myType;
+		
 	}
-
+public void print()
+{
+	
+}
 	
 }

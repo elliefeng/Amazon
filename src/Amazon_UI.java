@@ -5,7 +5,7 @@ import java.awt.Container;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,6 +13,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.BorderLayout;
+import src.Images.*;
 //import java.awt.event.ActionListener;
 //import java.awt.event.ActionEvent;
 
@@ -30,7 +31,9 @@ public class Amazon_UI extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	private static Image shirtImage = new ImageIcon("nike.png").getImage();
+	private static Image pantsImage = new ImageIcon("pants.jpg").getImage();
+	private static Image shoesImage = new ImageIcon("shoes.jpg").getImage();
 
 	/**
 	 * Launch the application.
@@ -79,7 +82,7 @@ public class Amazon_UI extends JFrame {
 		mnClothing.add(mntmShirt);
 		mntmShirt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Clothing_UI frame = new Clothing_UI("Shirt",19.99,"Red","nike.png");
+				Clothing_UI frame = new Clothing_UI("Shirt",19.99,"Teal", shirtImage);
 				frame.setVisible(true);
 			}
 		});
@@ -88,7 +91,7 @@ public class Amazon_UI extends JFrame {
 		mnClothing.add(mntmPant);
 		mntmPant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Clothing_UI frame = new Clothing_UI("Pant",25.99,"Blue");
+				Clothing_UI frame = new Clothing_UI("Pant",25.99,"Green", pantsImage);
 				frame.setVisible(true);
 			}
 		});
@@ -97,7 +100,7 @@ public class Amazon_UI extends JFrame {
 		mnClothing.add(mntmShoe);
 		mntmShoe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Clothing_UI frame = new Clothing_UI("Shoe",30.99,"Black");
+				Clothing_UI frame = new Clothing_UI("Shoe",30.99,"Black", shoesImage);
 				frame.setVisible(true);
 			}
 		});

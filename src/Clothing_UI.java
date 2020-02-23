@@ -2,6 +2,7 @@ package src;
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.ByteArrayInputStream;
@@ -22,7 +23,8 @@ public class Clothing_UI extends Product_UI{
 	private static String name;
 	private static double price;
 	private static String color;
-	private static JLabel image;
+	//private static JLabel image;
+	private static Image image;
 	
 	private static final long serialVersionUID = 1048257216723871342L;
 	
@@ -39,7 +41,7 @@ public class Clothing_UI extends Product_UI{
 		});
 	}
 	
-	public Clothing_UI(String name, double price, String color, JLabel image) {
+	public Clothing_UI(String name, double price, String color, Image image) {
 		super(name, price, color);
 		/*this.name = name;
 		this.price = price;
@@ -50,9 +52,8 @@ public class Clothing_UI extends Product_UI{
 		getContentPane().setLayout(null);
 		
 		JLabel lblImage = new JLabel("");
-		lblImage = new JLabel("");
-	    java.awt.Image icon = new ImageIcon(/*image*/).getImage();
-	    lblImage.setIcon(new ImageIcon(icon));
+	    //image = new ImageIcon(/*image*/).getImage();
+	    lblImage.setIcon(new ImageIcon(image));
 	    getContentPane().add(lblImage);
 		lblImage.setBounds(28, 31, 132, 138);
 		

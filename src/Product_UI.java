@@ -63,17 +63,6 @@ public class Product_UI extends Amazon_UI {
 		lblRemainingStock.setBounds(193, 96, 212, 28);
 		getContentPane().add(lblRemainingStock);
 		
-		JButton btnAddCart = new JButton("Add to Cart");
-		btnAddCart.setOpaque(true);
-		btnAddCart.setBackground(new Color(240, 230, 140));
-		btnAddCart.setBounds(193, 188, 217, 45);
-		getContentPane().add(btnAddCart);
-		btnAddCart.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				--stock;
-			}
-		});
-		
 		String[] quantity = {"1","2","3","4","5"};
 		JComboBox quantityList = new JComboBox(quantity);
 		quantityList.setBounds(195, 143, 73, 44);
@@ -81,6 +70,20 @@ public class Product_UI extends Amazon_UI {
 		JLabel lblNewLabel = new JLabel("Quantity");
 		lblNewLabel.setBounds(203, 130, 54, 16);
 		getContentPane().add(lblNewLabel);
+		
+		JButton btnAddCart = new JButton("Add to Cart");
+		btnAddCart.setOpaque(true);
+		btnAddCart.setBackground(new Color(240, 230, 140));
+		btnAddCart.setBounds(193, 188, 217, 45);
+		getContentPane().add(btnAddCart);
+		btnAddCart.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String text = (String)quantityList.getSelectedItem();
+				int quant = Integer.parseInt(text);
+				stock = stock - quant;
+				lblRemainingStock.setText("Remaining Stock: " + stock);
+			}
+		});
 		
 	}
 }

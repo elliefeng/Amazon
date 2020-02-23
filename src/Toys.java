@@ -33,7 +33,7 @@ public class Toys extends Product {
 	}
 public void print()
 {
-	
+	System.out.println("hi");
 }
 	
 }

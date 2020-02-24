@@ -82,8 +82,15 @@ public class Amazon_UI extends JFrame {
 		mnClothing.add(mntmShirt);
 		mntmShirt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Clothing_UI frame = new Clothing_UI("Shirt",19.99,"Teal", shirtImage);
-				frame.setVisible(true);
+				Clothing_UI frame = new Clothing_UI("Shirt",19.99,"Teal");
+				frame.setVisible(true);   
+				
+				JLabel pic = new JLabel("");        
+		        java.awt.Image image = new ImageIcon("nike.jpg").getImage();
+		        pic.setIcon(new ImageIcon(image));
+		        pic.setBounds(377, 111, 128, 128);
+		        Clothing_UI.lblImage.setBounds(28, 31, 96, 96);
+
 			}
 		});
 		
@@ -91,7 +98,7 @@ public class Amazon_UI extends JFrame {
 		mnClothing.add(mntmPant);
 		mntmPant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Clothing_UI frame = new Clothing_UI("Pant",25.99,"Green", pantsImage);
+				Clothing_UI frame = new Clothing_UI("Pant",25.99,"Green");
 				frame.setVisible(true);
 			}
 		});
@@ -100,7 +107,7 @@ public class Amazon_UI extends JFrame {
 		mnClothing.add(mntmShoe);
 		mntmShoe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Clothing_UI frame = new Clothing_UI("Shoe",30.99,"Black", shoesImage);
+				Clothing_UI frame = new Clothing_UI("Shoe",30.99,"Black");
 				frame.setVisible(true);
 			}
 		});
@@ -112,7 +119,7 @@ public class Amazon_UI extends JFrame {
 		mnToys.add(mntmChicken);
 		mntmChicken.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Toys_UI frame = new Toys_UI("Rubber Chicken", 10.99, "50");
+				Toys_UI frame = new Toys_UI("Rubber Chicken", 10.99, "50+");
 				frame.setVisible(true);
 			}
 		});

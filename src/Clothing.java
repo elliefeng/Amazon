@@ -1,17 +1,19 @@
 package src;
 
+
+
 public class Clothing extends Product {
 	double myPrice;
 	String mySize;
 	String myColor;
 	String myType;
 	
-	public Clothing (double price, String size, String color, String type) {
+	public Clothing (double price, String color, String type) {
 		myPrice = price;
-		mySize = size;
 		myColor = color;
 		myType = type;
 	}
+	
 	public double getPrice() {
 		return myPrice;
 	}
@@ -25,4 +27,8 @@ public class Clothing extends Product {
 	public String getType() {
 		return myType;
 	}
+	public String toString() {
+		return (myType + ", " + myColor + ": " + "$" + myPrice);
+	}
+	
 }

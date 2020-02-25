@@ -31,10 +31,7 @@ public class Amazon_UI extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private static Image shirtImage = new ImageIcon("nike.png").getImage();
-	private static Image pantsImage = new ImageIcon("pants.jpg").getImage();
-	private static Image shoesImage = new ImageIcon("shoes.jpg").getImage();
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -83,14 +80,9 @@ public class Amazon_UI extends JFrame {
 		mntmShirt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Clothing_UI frame = new Clothing_UI("Shirt",19.99,"Teal");
-				frame.setVisible(true);   
-				
-				JLabel pic = new JLabel("");        
-		        java.awt.Image image = new ImageIcon("nike.jpg").getImage();
-		        pic.setIcon(new ImageIcon(image));
-		        pic.setBounds(377, 111, 128, 128);
-		        Clothing_UI.lblImage.setBounds(28, 31, 96, 96);
-
+				java.awt.Image image = new ImageIcon("nike.jpg").getImage();
+				frame.setVisible(true);  
+		        frame.lblImage.setIcon(new ImageIcon(image)); 
 			}
 		});
 		
@@ -199,12 +191,12 @@ public class Amazon_UI extends JFrame {
 		JMenuItem mntmCheckout = new JMenuItem("Proceed to Checkout");
 		Cart.add(mntmCheckout);
 		getContentPane().setLayout(null);
-		/*mntmCheckout.addActionListener(new ActionListener() {
+		mntmCheckout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cart_UI frame = new Cart_UI(INSERT PARAMS);
+				Cart_UI frame = new Cart_UI();
 				frame.setVisible(true);
 			}
-		});*/
+		});
 		
 		/*JLabel lblAmazon = new JLabel("Welcome to Amazon!");
 		lblAmazon.setOpaque(true);

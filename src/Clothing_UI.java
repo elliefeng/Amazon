@@ -24,7 +24,7 @@ public class Clothing_UI extends Product_UI{
 	private static String name;
 	private static double price;
 	private static String color;
-	public static JLabel lblImage;
+	public static JLabel lblImage = new JLabel("");
 	
 	private static final long serialVersionUID = 1048257216723871342L;
 	

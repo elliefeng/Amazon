@@ -3,6 +3,7 @@ package src;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Image;
+import javax.swing.ImageIcon;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.ByteArrayInputStream;
@@ -23,8 +24,7 @@ public class Clothing_UI extends Product_UI{
 	private static String name;
 	private static double price;
 	private static String color;
-	//private static JLabel image;
-	private static Image image;
+	public static JLabel lblImage = new JLabel("");
 	
 	private static final long serialVersionUID = 1048257216723871342L;
 	
@@ -32,7 +32,7 @@ public class Clothing_UI extends Product_UI{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Clothing_UI frame = new Clothing_UI(name, price, color, image);
+					Clothing_UI frame = new Clothing_UI(name, price, color);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,7 +41,7 @@ public class Clothing_UI extends Product_UI{
 		});
 	}
 	
-	public Clothing_UI(String name, double price, String color, Image image) {
+	public Clothing_UI(String name, double price, String color) {
 		super(name, price, color);
 		/*this.name = name;
 		this.price = price;
@@ -51,11 +51,11 @@ public class Clothing_UI extends Product_UI{
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 		
-		JLabel lblImage = new JLabel("");
+		//JLabel lblImage = new JLabel("");
 	    //image = new ImageIcon(/*image*/).getImage();
-	    lblImage.setIcon(new ImageIcon(image));
-	    getContentPane().add(lblImage);
-		lblImage.setBounds(28, 31, 132, 138);
+	    //lblImage.setIcon(new ImageIcon(image));
+		lblImage.setBounds(28, 31, 96, 96);
+		getContentPane().add(lblImage);
 		
 		JLabel txtrProduct = new JLabel();
 		txtrProduct.setText("Product: " + name);
@@ -93,5 +93,10 @@ public class Clothing_UI extends Product_UI{
 		JLabel lblNewLabel_1 = new JLabel("Size");
 		lblNewLabel_1.setBounds(343, 130, 25, 16);
 		getContentPane().add(lblNewLabel_1);
+	}
+
+	public static void DisplayPicture(Image image) {
+		lblImage.setIcon(new ImageIcon(image));
+	    lblImage.setBounds(28, 31, 132, 138);
 	}
 }

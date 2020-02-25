@@ -7,6 +7,7 @@ public class Clothing extends Product {
 	String mySize;
 	String myColor;
 	String myType;
+	int commit;
 	
 	public Clothing (double price, String color, String type) {
 		myPrice = price;

@@ -185,6 +185,18 @@ public class Amazon_UI extends JFrame {
 			}
 		});
 		
+		JMenu mnSearch = new JMenu("Search");
+		menuBar.add(mnSearch);
+		
+		JMenuItem mntmSearch = new JMenuItem("Search for a product");
+		mnSearch.add(mntmSearch);
+		mntmSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Search_UI frame = new Search_UI();
+				frame.setVisible(true);
+			}
+		});
+		
 		JMenu Cart = new JMenu("My Cart");
 		menuBar.add(Cart);
 		

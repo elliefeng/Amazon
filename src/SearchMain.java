@@ -5,34 +5,27 @@ import javax.swing.ImageIcon;
 public class SearchMain 
 {
 	
-	private static ImageIcon shirtImage = new ImageIcon("nike.jpg");
-	private static ImageIcon pantsImage = new ImageIcon("pants.jpg");
-	private static ImageIcon shoesImage = new ImageIcon("shoes.jpg");
-	
     public static void main() {
     	displayShirt();
     	displayPant();
     	displayShoe();
-    	//FIX THIS
-    	
+    	//FIX THIS	
     }
 	
-	
     public static void displayShirt() {
-    	 	Search_UI P = new Search_UI(); 
-    	 	String search = P.search;
-    	 	if (search.replace(" ", "").toLowerCase().contains(P.search.replace(" ", "").toLowerCase())) {
-    	 		Clothing_UI frame = new Clothing_UI("Shirt",19.99,"Teal", shirtImage);
+    	 Search_UI P = new Search_UI(); 
+    	 String search = P.search;
+    	 if (search.replace(" ", "").toLowerCase().contains(P.search.replace(" ", "").toLowerCase())) {
+    	 		Clothing_UI frame = new Clothing_UI("Shirt",19.99,"Teal");
 				frame.setVisible(true);  
     	 	}
     }
-    
     
     public static void displayPant() {
     	Search_UI P = new Search_UI(); 
 	 	String search = P.search;
 	 	if (search.replace(" ", "").toLowerCase().contains(P.search.replace(" ", "").toLowerCase())) {
-	 		Clothing_UI frame = new Clothing_UI("Pant",25.99,"Green",pantsImage);
+	 		Clothing_UI frame = new Clothing_UI("Pant",25.99,"Green");
 			frame.setVisible(true);  
 	 		}
     }
@@ -41,7 +34,7 @@ public class SearchMain
     	Search_UI P = new Search_UI(); 
 	 	String search = P.search;
 	 	if (search.replace(" ", "").toLowerCase().contains(P.search.replace(" ", "").toLowerCase())) {
-	 		Clothing_UI frame = new Clothing_UI("Shoe",30.99,"Black",shoesImage);
+	 		Clothing_UI frame = new Clothing_UI("Shoe",30.99,"Black");
 			frame.setVisible(true);  
 	 		}
     }

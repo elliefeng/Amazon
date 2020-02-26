@@ -1,107 +1,57 @@
 package src;
 
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JFrame;
+
 
 public class SearchMain 
 {
+	private static JPanel contentPane;
 	
     public static void main() {
-    	displayShirt();
-    	displayPant();
-    	displayShoe();
-    	//FIX THIS	
+    	//String a;
+    	Search_UI P = new Search_UI();
+    	P.search = P.search.replace(" ", "").toLowerCase();
+    	switch(P.search) {
+    	  case "shirt":
+    		  Clothing_UI frame = new Clothing_UI("Shirt",19.99,"Teal");
+			  frame.setVisible(true);  
+    		  break;
+    	  case "pant":
+    		  Clothing_UI frame2 = new Clothing_UI("Pant",25.99,"Green");
+  			  frame2.setVisible(true); 
+  			break;
+    	  case "shoe":
+    		  Clothing_UI frame3 = new Clothing_UI("Shoe",30.99,"Black");
+  			  frame3.setVisible(true);  
+  			break;
+    	  
+    	  
+    	  case "lego":
+    		  Toys_UI frame6 = new Toys_UI("Legos", 15.99, "8-11");
+			  frame6.setVisible(true);  
+    		  break;
+    	  case "stuffed animal":
+    		  Toys_UI frame7 = new Toys_UI("Stuffed animals", 8.99, "5-10");
+  			  frame7.setVisible(true); 
+  			break;
+    	  case "rubber chicken":
+    		  Toys_UI frame8 = new Toys_UI("Rubber Chicken", 10.99, "50+");
+  			  frame8.setVisible(true);  
+  			break;
+  			
+  		 
+    	  
+    	  default:
+    			Search_UI frame4 = new Search_UI();
+    			P.errorMessage.setText("ERROR PRODUCT NOT FOUND :(");
+    			frame4.setVisible(true);
+
     }
-	
-    public static void displayShirt() {
-    	 Search_UI P = new Search_UI(); 
-    	 String search = P.search;
-    	 if (search.replace(" ", "").toLowerCase().contains(P.search.replace(" ", "").toLowerCase())) {
-    	 		Clothing_UI frame = new Clothing_UI("Shirt",19.99,"Teal");
-				frame.setVisible(true);  
-    	 	}
-    }
-    
-    public static void displayPant() {
-    	Search_UI P = new Search_UI(); 
-	 	String search = P.search;
-	 	if (search.replace(" ", "").toLowerCase().contains(P.search.replace(" ", "").toLowerCase())) {
-	 		Clothing_UI frame = new Clothing_UI("Pant",25.99,"Green");
-			frame.setVisible(true);  
-	 		}
-    }
-    
-    public static void displayShoe() {
-    	Search_UI P = new Search_UI(); 
-	 	String search = P.search;
-	 	if (search.replace(" ", "").toLowerCase().contains(P.search.replace(" ", "").toLowerCase())) {
-	 		Clothing_UI frame = new Clothing_UI("Shoe",30.99,"Black");
-			frame.setVisible(true);  
-	 		}
-    }
-            
- /*public static String main(String input2) {
-           
-        Python P = new Python(); 
-        P.init();
-        Swift S= new Swift();
-     	S.init();
-     	Ruby R = new Ruby();
-     	R.init();
-     	Java J = new Java();
-     	J.init();
-            
-        String input=null;
-        try {
-                int aa = Integer.valueOf(input); //if input is 0, returns string that will terminate main method
-                if(aa == 0) {
-                    System.out.println("You are done searching");
-                }
-            } catch(NumberFormatException e) {
-                int aa = 1;
-            } 
-            input2 = "^" + input2.toLowerCase() + "^"; //adds ^^ to the string
-        
-            // Check Python
-        if(P.BirthDate.toLowerCase().indexOf(input2) >= 0 || 
-               P.Creator.toLowerCase().indexOf(input2) >= 0 || 
-               P.Owner.toLowerCase().indexOf(input2) >= 0 ||
-               P.ReasonForDemand.toLowerCase().indexOf(input2) >= 0 || 
-               P.GitHubUsageRank.toLowerCase().indexOf(input2) >= 0 || 
-               P.KeyCompanies.toLowerCase().indexOf(input2) >= 0 || 
-               P.AvgSalary.toLowerCase().indexOf(input2) >= 0 ||
-               P.ide.toLowerCase().indexOf(input2) >= 0 || 
-               P.frameworks.toLowerCase().indexOf(input2) >= 0) {
-                return "Python";
-            }
-                
-            // Check Java
-         if(J.BirthDate.toLowerCase().indexOf(input2) >= 0 || 
-               J.Creator.toLowerCase().indexOf(input2) >= 0 || 
-               J.Owner.toLowerCase().indexOf(input2) >= 0 ||
-               J.ReasonForDemand.toLowerCase().indexOf(input2) >= 0 || 
-               J.GitHubUsageRank.toLowerCase().indexOf(input2) >= 0 || 
-               J.KeyCompanies.toLowerCase().indexOf(input2) >= 0 || 
-               J.AvgSalary.toLowerCase().indexOf(input2) >= 0 ||
-               J.ide.toLowerCase().indexOf(input2) >= 0 || 
-               J.frameworks.toLowerCase().indexOf(input2) >= 0) {
-                return "Java";
-            }
-            
-            //Check Ruby
-          if(R.BirthDate.toLowerCase().indexOf(input2) >= 0 || 
-               R.Creator.toLowerCase().indexOf(input2) >= 0 || 
-               R.Owner.toLowerCase().indexOf(input2) >= 0 ||
-               R.ReasonForDemand.toLowerCase().indexOf(input2) >= 0 || 
-               R.GitHubUsageRank.toLowerCase().indexOf(input2) >= 0 || 
-               R.KeyCompanies.toLowerCase().indexOf(input2) >= 0 || 
-               R.AvgSalary.toLowerCase().indexOf(input2) >= 0 ||
-               R.ide.toLowerCase().indexOf(input2) >= 0 || 
-               R.frameworks.toLowerCase().indexOf(input2) >= 0) {
-                return "Ruby";
-            }
-          return "false";
-            }*/
-}
+   }
+ }
             
 
 

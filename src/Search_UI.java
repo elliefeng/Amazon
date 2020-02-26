@@ -10,11 +10,13 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.JLabel;
 
 public class Search_UI extends Amazon_UI {
 	
 	private JPanel contentPane;
 	public static String search;
+	public static JLabel errorMessage = new JLabel("");
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -70,6 +72,13 @@ public class Search_UI extends Amazon_UI {
 			SearchMain.main();
 		}
 	});
+	errorMessage.setForeground(Color.RED);
+	errorMessage.setFont(new Font("Iowan Old Style", Font.BOLD, 15));
+	
+	errorMessage.setBounds(38, 159, 376, 46);
+	getContentPane().add(errorMessage);
+	errorMessage.setText("");
+	
 
 
 	}

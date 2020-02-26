@@ -43,6 +43,18 @@ public class SearchMain
   			break;
   			
   		 
+    	  case "phone":
+    		  Electronics_UI frame9 = new Electronics_UI("iPhone", 500.00, "Apple");
+			  frame9.setVisible(true);  
+    		  break;
+    	  case "computer":
+    		  Electronics_UI frame10 = new Electronics_UI("Computer", 600.00, "Microsoft");
+  			  frame10.setVisible(true); 
+  			break;
+    	  case "TV":
+    		  Electronics_UI frame11 = new Electronics_UI("TV", 800.00, "Sony");
+  			  frame11.setVisible(true);  
+  			break;
     	  
     	  default:
     			Search_UI frame4 = new Search_UI();

@@ -1,16 +1,22 @@
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+
 public class Clothing extends Product {
 	double myPrice;
 	String mySize;
 	String myColor;
 	String myType;
+	String myImage;
 	int myQuantity;
 	int commit;
 	
-	public Clothing (double price, String color, String type, int quantity) {
+	public Clothing (double price, String color, String type, int quantity, String image) {
 		myPrice = price;
 		myColor = color;
 		myType = type;
 		myQuantity = quantity;
+		myImage = image;
 	}
 	
 	public double getPrice() {

@@ -1,5 +1,3 @@
-
-
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.EventQueue;
@@ -13,14 +11,11 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.BorderLayout;
-//import image.*;
-//import java.awt.event.ActionListener;
-//import java.awt.event.ActionEvent;
 
 /** Menu<br>
  * Entry point for project
  * 
- * @author 3rd Period Class
+ * @author 
  *
  *
  */
@@ -54,20 +49,7 @@ public class Amazon_UI extends JFrame {
 	public Amazon_UI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
-		
-		// JLabel with image 
-		/*JLabel pic = new JLabel("");        
-        java.awt.Image image = new ImageIcon("APCompSci.jpeg").getImage();
-        this.setIconImage(new ImageIcon("./AP_Exam/chandu.txt").getImage()); // easter egg
-        pic.setIcon(new ImageIcon(image));
-        pic.setBounds(377, 111, 128, 128);
-        
-        // Content Panel to add Label and Image
-        //https://docs.oracle.com/javase/tutorial/uiswing/components/rootpane.html
-        Container content = getContentPane();
-        content.setBackground(new Color(100,100,255));
-        content.add(pic);*/
-        
+
         // Menu Objects 
         JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -80,9 +62,8 @@ public class Amazon_UI extends JFrame {
 		mntmShirt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Clothing_UI frame = new Clothing_UI("Shirt",19.99,"Teal");
-				java.awt.Image image = new ImageIcon("nike.jpg").getImage();
-				frame.setVisible(true);  
-		        frame.lblImage.setIcon(new ImageIcon(image)); 
+		        frame.lblImage.setIcon(new ImageIcon("src/nike.jpg")); 
+		        frame.setVisible(true); 
 			}
 		});
 		
@@ -91,7 +72,8 @@ public class Amazon_UI extends JFrame {
 		mntmPant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Clothing_UI frame = new Clothing_UI("Pant",25.99,"Green");
-				frame.setVisible(true);
+		        frame.lblImage.setIcon(new ImageIcon("src/pants.jpg")); 
+		        frame.setVisible(true); 
 			}
 		});
 		
@@ -100,7 +82,8 @@ public class Amazon_UI extends JFrame {
 		mntmShoe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Clothing_UI frame = new Clothing_UI("Shoe",30.99,"Black");
-				frame.setVisible(true);
+		        frame.lblImage.setIcon(new ImageIcon("src/shoes.jpg")); 
+		        frame.setVisible(true); 
 			}
 		});
 		
@@ -141,7 +124,7 @@ public class Amazon_UI extends JFrame {
 		mnElectronics.add(mntmPhone);
 		mntmPhone.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Electronics_UI frame = new Electronics_UI("iPhone", 500.00, "Apple");
+				Electronics_UI frame = new Electronics_UI("iPhone", 500.01, "Apple");
 				frame.setVisible(true);
 			}
 		});
@@ -150,7 +133,7 @@ public class Amazon_UI extends JFrame {
 		mnElectronics.add(mntmComputer);
 		mntmComputer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Electronics_UI frame = new Electronics_UI("Computer", 600.00, "Microsoft");
+				Electronics_UI frame = new Electronics_UI("Computer", 600.01, "Microsoft");
 				frame.setVisible(true);
 			}
 		});
@@ -159,7 +142,7 @@ public class Amazon_UI extends JFrame {
 		mnElectronics.add(mntmTV);
 		mntmTV.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Electronics_UI frame = new Electronics_UI("TV", 800.00, "Sony");
+				Electronics_UI frame = new Electronics_UI("TV", 800.01, "Sony");
 				frame.setVisible(true);
 			}
 		});
@@ -171,7 +154,7 @@ public class Amazon_UI extends JFrame {
 		mnHome.add(mntmFurniture);
 		mntmPhone.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Home_UI frame = new Home_UI("Coach",350.00, "15 ft x 5 ft");
+				Home_UI frame = new Home_UI("Coach",350.01, "15 ft x 5 ft");
 				frame.setVisible(true);
 			}
 		});

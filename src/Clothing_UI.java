@@ -1,6 +1,3 @@
-
-
-
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Image;
@@ -19,7 +16,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -58,8 +54,6 @@ public class Clothing_UI extends Product_UI{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
-		
-		
 		
 		//JLabel lblImage = new JLabel("");
 	    //image = new ImageIcon(/*image*/).getImage();
@@ -122,8 +116,7 @@ public class Clothing_UI extends Product_UI{
 		});
 		btnNext.setBounds(321, 40, 105, 23);
 		getContentPane().add(btnNext);
-		
-		
+	
 		
 		JButton btnPrevious = new JButton("Previous");
 		btnPrevious.addActionListener(new ActionListener() {

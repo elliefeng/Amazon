@@ -1,7 +1,3 @@
-package src;
-
-import src.Product;
-
 public class Clothing extends Product {
 	double myPrice;
 	String mySize;

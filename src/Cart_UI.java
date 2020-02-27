@@ -1,4 +1,4 @@
-package src;
+
 
 
 import java.awt.Color;
@@ -11,7 +11,7 @@ import java.awt.Color;
 	import javax.swing.JMenu;
 	import javax.swing.JMenuItem;
 	import javax.swing.SwingConstants;
-	import javax.swing.JButton;
+import javax.swing.JButton;
 	import javax.swing.JComboBox;
 	import java.awt.List;
 import java.awt.event.ActionListener;

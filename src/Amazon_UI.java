@@ -1,4 +1,4 @@
-package src;
+
 
 import java.awt.Color;
 import java.awt.Container;
@@ -13,7 +13,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.BorderLayout;
-import src.Images.*;
+//import image.*;
 //import java.awt.event.ActionListener;
 //import java.awt.event.ActionEvent;
 

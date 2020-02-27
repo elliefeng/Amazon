@@ -15,6 +15,7 @@ public class SearchMain
     	Search_UI P = new Search_UI();
     	P.search = P.search.replace(" ", "").toLowerCase();
     	switch(P.search) {
+    	  //CLOTHING
     	  case "shirt":
     		  Clothing_UI frame = new Clothing_UI("Shirt",19.99,"Teal");
 			  frame.setVisible(true);  
@@ -28,7 +29,7 @@ public class SearchMain
   			  frame3.setVisible(true);  
   			break;
     	  
-    	  
+    	  //TOYS
     	  case "lego":
     		  Toys_UI frame6 = new Toys_UI("Legos", 15.99, "8-11");
 			  frame6.setVisible(true);  
@@ -42,7 +43,7 @@ public class SearchMain
   			  frame8.setVisible(true);  
   			break;
   			
-  		 
+  		  //ELECTRONICS
     	  case "phone":
     		  Electronics_UI frame9 = new Electronics_UI("iPhone", 500.00, "Apple");
 			  frame9.setVisible(true);  
@@ -55,6 +56,17 @@ public class SearchMain
     		  Electronics_UI frame11 = new Electronics_UI("TV", 800.00, "Sony");
   			  frame11.setVisible(true);  
   			break;
+    	  
+    	  //HOME
+    	  case "couch":
+    		  Home_UI frame12 = new Home_UI("Coach",350.00, "15 ft x 5 ft");
+			  frame12.setVisible(true);  
+    		  break;
+    	  case "table":
+    		  Home_UI frame13 = new Home_UI("Table", 100.00, "10 ft x 15 ft");
+  			  frame13.setVisible(true); 
+  			break;
+    	  
     	  
     	  default:
     			Search_UI frame4 = new Search_UI();

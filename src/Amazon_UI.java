@@ -48,7 +48,7 @@ public class Amazon_UI extends JFrame {
 	 */
 	public Amazon_UI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 652, 433);
 
         // Menu Objects 
         JMenuBar menuBar = new JMenuBar();
@@ -196,8 +196,9 @@ public class Amazon_UI extends JFrame {
 		//JLabel lblAmazon = new JLabel("Welcome to Amazon!");
 		lblAmazon.setOpaque(true);
 		lblAmazon.setBackground(Color.ORANGE);
-		lblAmazon.setBounds(147, 17, 137, 78);
+		lblAmazon.setBounds(6, 6, 617, 377);
 		getContentPane().add(lblAmazon); 
+		lblAmazon.setIcon(new ImageIcon("src/ellie.jpg"));
 		
 		
 	}

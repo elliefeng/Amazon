@@ -61,7 +61,7 @@ public class Amazon_UI extends JFrame {
 		mnClothing.add(mntmShirt);
 		mntmShirt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Clothing_UI frame = new Clothing_UI("Shirt",19.99,"Teal");
+				Clothing_UI frame = new Clothing_UI(0);
 		        frame.lblImage.setIcon(new ImageIcon("src/nike.jpg")); 
 		        frame.setVisible(true); 
 			}
@@ -71,7 +71,7 @@ public class Amazon_UI extends JFrame {
 		mnClothing.add(mntmPant);
 		mntmPant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Clothing_UI frame = new Clothing_UI("Pant",25.99,"Green");
+				Clothing_UI frame = new Clothing_UI(2);
 		        frame.lblImage.setIcon(new ImageIcon("src/pants.jpg")); 
 		        frame.setVisible(true); 
 			}
@@ -81,7 +81,7 @@ public class Amazon_UI extends JFrame {
 		mnClothing.add(mntmShoe);
 		mntmShoe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Clothing_UI frame = new Clothing_UI("Shoe",30.99,"Black");
+				Clothing_UI frame = new Clothing_UI(1);
 		        frame.lblImage.setIcon(new ImageIcon("src/shoes.jpg")); 
 		        frame.setVisible(true); 
 			}

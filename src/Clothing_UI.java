@@ -1,3 +1,4 @@
+
 package src;
 
 import java.awt.Color;
@@ -18,12 +19,16 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Clothing_UI extends Product_UI{
 	
 	private static String name;
 	private static double price;
 	private static String color;
+	public int i = 0;
+	
 	public static JLabel lblImage = new JLabel("");
 	
 	private static final long serialVersionUID = 1048257216723871342L;
@@ -32,6 +37,7 @@ public class Clothing_UI extends Product_UI{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					ProductLists.addClothingProducts();
 					Clothing_UI frame = new Clothing_UI(name, price, color);
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -43,6 +49,7 @@ public class Clothing_UI extends Product_UI{
 	
 	public Clothing_UI(String name, double price, String color) {
 		super(name, price, color);
+		
 		/*this.name = name;
 		this.price = price;
 		this.color = color;*/
@@ -51,24 +58,26 @@ public class Clothing_UI extends Product_UI{
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 		
+		
+		
 		//JLabel lblImage = new JLabel("");
 	    //image = new ImageIcon(/*image*/).getImage();
 	    //lblImage.setIcon(new ImageIcon(image));
-		lblImage.setBounds(28, 31, 96, 96);
+		lblImage.setBounds(28, 35, 96, 96);
 		getContentPane().add(lblImage);
 		
 		JLabel txtrProduct = new JLabel();
-		txtrProduct.setText("Product: " + name);
+		txtrProduct.setText("Product: " + ProductLists.listOfClothingProducts.get(i).myType);
 		txtrProduct.setBounds(28, 181, 132, 32);
 		getContentPane().add(txtrProduct);
 		
 		JLabel txtrPrice = new JLabel();
-		txtrPrice.setText("Price: $" + price);
+		txtrPrice.setText("Price: $" + ProductLists.listOfClothingProducts.get(i).myPrice);
 		txtrPrice.setBounds(193, 35, 132, 32);
 		getContentPane().add(txtrPrice);
 		
 		JLabel txtrAttribute = new JLabel();
-		txtrAttribute.setText("Color: " + color);
+		txtrAttribute.setText("Color: " + ProductLists.listOfClothingProducts.get(i).myColor);
 		txtrAttribute.setBounds(193, 66, 132, 32);
 		getContentPane().add(txtrAttribute);
 		
@@ -93,6 +102,45 @@ public class Clothing_UI extends Product_UI{
 		JLabel lblNewLabel_1 = new JLabel("Size");
 		lblNewLabel_1.setBounds(343, 130, 25, 16);
 		getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + ProductLists.listOfClothingProducts.get(i).myQuantity);
+		lblRemainingStock.setOpaque(true);
+		lblRemainingStock.setBounds(193, 96, 212, 28);
+		getContentPane().add(lblRemainingStock);
+		
+		JButton btnNext = new JButton("Next");
+		btnNext.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				i = (i+1)%3;
+				System.out.println(i);
+				txtrProduct.setText("Product: " + ProductLists.listOfClothingProducts.get(i).myType);
+				txtrPrice.setText("Price: $" + ProductLists.listOfClothingProducts.get(i).myPrice);
+				txtrAttribute.setText("Color: " + ProductLists.listOfClothingProducts.get(i).myColor);
+				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfClothingProducts.get(i).myQuantity);
+			}
+		});
+		btnNext.setBounds(321, 40, 105, 23);
+		getContentPane().add(btnNext);
+		
+		
+		
+		JButton btnPrevious = new JButton("Previous");
+		btnPrevious.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				i = (i+2)%3;
+				System.out.println(i);
+				txtrProduct.setText("Product: " + ProductLists.listOfClothingProducts.get(i).myType);
+				txtrPrice.setText("Price: $" + ProductLists.listOfClothingProducts.get(i).myPrice);
+				txtrAttribute.setText("Color: " + ProductLists.listOfClothingProducts.get(i).myColor);
+				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfClothingProducts.get(i).myQuantity);
+			}
+		});
+		btnPrevious.setBounds(335, 71, 91, 23);
+		getContentPane().add(btnPrevious);
+		
+		
+		
+		
 	}
 
 	public static void DisplayPicture(Image image) {

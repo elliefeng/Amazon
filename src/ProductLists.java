@@ -42,9 +42,9 @@ public class ProductLists {
 	
 	
 	public static void addElectronicProducts() {
-		Electronics phone = new Electronics(112.95, "Nokia", "The brick phone", "phone");
-		Electronics tv = new Electronics(699.99, "Samsung", "420 inch 8k smart tv", "television");
-		Electronics laptop =  new Electronics(399.99, "Apple", "totaly litty quantum computer 3000", "laptop");
+		Electronics phone = new Electronics(112.95, "Nokia", "phone", 420, "src/nokia.jpg");
+		Electronics tv = new Electronics(699.99, "Samsung","television", 69, "src/tv.jpg");
+		Electronics laptop =  new Electronics(399.99, "Apple", "laptop", 1234, "src/computer.jpg");
 		listOfElectronicProducts.add(phone);
 		listOfElectronicProducts.add(tv);
 		listOfElectronicProducts.add(laptop);

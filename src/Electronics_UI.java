@@ -33,6 +33,7 @@ public class Electronics_UI extends Product_UI{
 	
 	public Electronics_UI(String name, double price,String brand) {
 		super(name, price, brand);
+		lblAmazon.setVisible(false);
 		/*this.name = name;
 		this.price = price;
 		this.color = color;*/

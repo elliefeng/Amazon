@@ -34,6 +34,7 @@ public class Home_UI extends Product_UI{
 	
 	public Home_UI(String name, double price, String dimensions) {
 		super(name, price, dimensions);
+		lblAmazon.setVisible(false);
 		/*this.name = name;
 		this.price = price;
 		this.color = color;*/

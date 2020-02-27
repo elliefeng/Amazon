@@ -46,6 +46,7 @@ public class Clothing_UI extends Product_UI{
 	
 	public Clothing_UI(int test) {
 		super();
+		lblAmazon.setVisible(false);
 		i = test;
 		ProductLists.addClothingProducts();
 		

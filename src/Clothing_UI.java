@@ -24,7 +24,7 @@ public class Clothing_UI extends Product_UI{
 	private static String name;
 	private static double price;
 	private static String color;
-	public int i = 0;
+	public static int i = 0;
 	
 	public static JLabel lblImage = new JLabel("");
 	
@@ -35,7 +35,7 @@ public class Clothing_UI extends Product_UI{
 			public void run() {
 				try {
 					ProductLists.addClothingProducts();
-					Clothing_UI frame = new Clothing_UI(name, price, color);
+					Clothing_UI frame = new Clothing_UI(i);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,8 +44,10 @@ public class Clothing_UI extends Product_UI{
 		});
 	}
 	
-	public Clothing_UI(String name, double price, String color) {
-		super(name, price, color);
+	public Clothing_UI(int test) {
+		super();
+		i = test;
+		ProductLists.addClothingProducts();
 		
 		/*this.name = name;
 		this.price = price;
@@ -55,9 +57,8 @@ public class Clothing_UI extends Product_UI{
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 		
-		//JLabel lblImage = new JLabel("");
-	    //image = new ImageIcon(/*image*/).getImage();
-	    //lblImage.setIcon(new ImageIcon(image));
+		JLabel lblImage = new JLabel("");
+	    lblImage.setIcon(new ImageIcon(ProductLists.listOfClothingProducts.get(i).myImage)); 
 		lblImage.setBounds(28, 35, 96, 96);
 		getContentPane().add(lblImage);
 		
@@ -112,6 +113,7 @@ public class Clothing_UI extends Product_UI{
 				txtrPrice.setText("Price: $" + ProductLists.listOfClothingProducts.get(i).myPrice);
 				txtrAttribute.setText("Color: " + ProductLists.listOfClothingProducts.get(i).myColor);
 				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfClothingProducts.get(i).myQuantity);
+				lblImage.setIcon(new ImageIcon(ProductLists.listOfClothingProducts.get(i).myImage));
 			}
 		});
 		btnNext.setBounds(321, 40, 105, 23);
@@ -127,6 +129,7 @@ public class Clothing_UI extends Product_UI{
 				txtrPrice.setText("Price: $" + ProductLists.listOfClothingProducts.get(i).myPrice);
 				txtrAttribute.setText("Color: " + ProductLists.listOfClothingProducts.get(i).myColor);
 				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfClothingProducts.get(i).myQuantity);
+				lblImage.setIcon(new ImageIcon(ProductLists.listOfClothingProducts.get(i).myImage));
 			}
 		});
 		btnPrevious.setBounds(335, 71, 91, 23);

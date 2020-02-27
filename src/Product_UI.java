@@ -31,7 +31,7 @@ public class Product_UI extends Amazon_UI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Product_UI frame = new Product_UI(name, price, attribute);
+					Product_UI frame = new Product_UI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,10 +40,8 @@ public class Product_UI extends Amazon_UI {
 		});
 	}
 	
-	public Product_UI(String myName, double myPrice, String myAttribute) {
-		myName = name;
-		myPrice = price;
-		myAttribute = attribute;
+	public Product_UI() {
+		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+
 public class ProductLists {
 
 	public static ArrayList<Clothing> listOfClothingProducts = new ArrayList<Clothing>();
@@ -30,9 +32,9 @@ public class ProductLists {
 	}
 	
 	public static void addClothingProducts() {
-		Clothing shirt = new Clothing(19.99,"teal","shirt",100);
-		Clothing shoes = new Clothing(30.99,"black","shoes",50);
-		Clothing pants = new Clothing(25.99,"green","pants",25);
+		Clothing shirt = new Clothing(19.99,"teal","shirt",100,"src/nike.jpg");
+		Clothing shoes = new Clothing(30.99,"black","shoes",50,"src/shoes.jpg");
+		Clothing pants = new Clothing(25.99,"green","pants",25,"src/pants.jpg");
 		listOfClothingProducts.add(shirt);
 		listOfClothingProducts.add(shoes);
 		listOfClothingProducts.add(pants);

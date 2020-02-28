@@ -7,6 +7,7 @@ public class Electronics extends Product
 	String myType;
 	String myImage;
 	int myQuantity;
+	int commit;
 	
 	public Electronics(double price, String brand, String type, int quantity, String image)
 	{

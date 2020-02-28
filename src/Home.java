@@ -4,13 +4,17 @@ public class Home extends Product{
 	String myMaterial;
 	String myDimensions;
 	String myType;
+	int myQuantity;
+	String myImage;
 	
-	public Home(double price, String material, String dimensions, String type)
+	public Home(double price, String material, String type, int Quantity, String image)
 	{
 		myPrice = price;
 		myMaterial = material;
-		myDimensions = dimensions;
-		myType = type;		
+		myType = type;
+		myQuantity = Quantity;
+		myImage = image;
+		
 	}
 	
 	public double getPrice()
@@ -22,10 +26,8 @@ public class Home extends Product{
 	{
 		return myMaterial;
 	}
-	
-	public String getDimensions()
-	{
-		return myDimensions;
+	public String getQuantity() {
+		return Integer.toString(myQuantity);
 	}
 	
 	public String getType()

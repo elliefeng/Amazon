@@ -6,12 +6,16 @@ public class Toys extends Product {
 	String myBrand;
 	String myModel;
 	String myType;
+	String myImage;
+	int myQuantity;
 	
-	public Toys(double price, String brand, String model, String type) {
+	public Toys(double price, String brand, String type, int Quantity, String image) {
 		myPrice = price;
 		myBrand = brand;
-		myModel = model;
 		myType = type;
+		myQuantity = Quantity;
+		myImage = image;
+		
 	}
 	
 	public double getPrice() {

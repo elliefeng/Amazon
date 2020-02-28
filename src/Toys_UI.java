@@ -2,7 +2,10 @@
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -36,38 +39,48 @@ public class Toys_UI extends Product_UI{
 		super();
 		lblAmazon.setVisible(false);
 		i = test;
-		ProductLists.addClothingProducts();
+		ProductLists.addToyProducts();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 		
-		JLabel lblImage = new JLabel("Image Goes Here");
+		JLabel lblImage = new JLabel("");
+		lblImage.setIcon(new ImageIcon(ProductLists.listOfToyProducts.get(i).myImage)); 
 		lblImage.setHorizontalAlignment(JLabel. CENTER);
 		lblImage.setOpaque(true);
 		lblImage.setBackground(Color.PINK);
-		lblImage.setBounds(28, 31, 132, 138);
+		lblImage.setBounds(28, 35, 96, 96);
 		getContentPane().add(lblImage);
 		
 		JLabel txtrProduct = new JLabel();
-		txtrProduct.setText("Product: " + name);
-		txtrProduct.setBounds(28, 181, 132, 32);
+		txtrProduct.setForeground(new Color(255, 255, 255));
+		txtrProduct.setText("Product: " + ProductLists.listOfToyProducts.get(i).myType);
+		txtrProduct.setBounds(6, 171, 191, 32);
 		getContentPane().add(txtrProduct);
+		txtrProduct.setOpaque(true);
+		txtrProduct.setBackground(new Color(34, 139, 34));
 		
 		JLabel txtrPrice = new JLabel();
-		txtrPrice.setText("Price: $" + price);
+		txtrPrice.setForeground(new Color(255, 255, 255));
+		txtrPrice.setText("Price: $" + ProductLists.listOfToyProducts.get(i).myPrice);
 		txtrPrice.setBounds(193, 35, 132, 32);
 		getContentPane().add(txtrPrice);
+		txtrPrice.setOpaque(true);
+		txtrPrice.setBackground(new Color(34, 139, 34));
 		
 		JLabel txtrAttribute = new JLabel();
-		txtrAttribute.setText("Age Group: " + ageGroup);
+		txtrAttribute.setForeground(new Color(255, 255, 255));
+		txtrAttribute.setText("Brand: " + ProductLists.listOfToyProducts.get(i).myBrand);
 		txtrAttribute.setBounds(193, 66, 132, 32);
 		getContentPane().add(txtrAttribute);
+		txtrAttribute.setOpaque(true);
+		txtrAttribute.setBackground(new Color(34, 139, 34));
 		
 		JButton btnAddCart = new JButton("Add to Cart");
 		btnAddCart.setOpaque(true);
-		btnAddCart.setBackground(new Color(240, 230, 140));
-		btnAddCart.setBounds(193, 188, 217, 45);
+		btnAddCart.setBackground(new Color(34, 139, 34));
+		btnAddCart.setBounds(209, 186, 217, 45);
 		getContentPane().add(btnAddCart);
 		
 		String[] quantity = {"1","2","3","4","5"};
@@ -77,5 +90,46 @@ public class Toys_UI extends Product_UI{
 		JLabel lblNewLabel = new JLabel("Quantity");
 		lblNewLabel.setBounds(203, 130, 54, 16);
 		getContentPane().add(lblNewLabel);
+		lblNewLabel.setOpaque(true);
+		lblNewLabel.setBackground(new Color(34, 139, 34));
+		
+		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + ProductLists.listOfToyProducts.get(i).myQuantity);
+		lblRemainingStock.setOpaque(true);
+		lblRemainingStock.setBounds(193, 96, 212, 28);
+		getContentPane().add(lblRemainingStock);
+		lblRemainingStock.setOpaque(true);
+		lblRemainingStock.setBackground(new Color(34, 139, 34));
+		
+		JButton btnNext = new JButton("Next");
+		btnNext.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				i = (i+1)%3;
+				System.out.println(i);
+				txtrProduct.setText("Product: " + ProductLists.listOfToyProducts.get(i).myType);
+				txtrPrice.setText("Price: $" + ProductLists.listOfToyProducts.get(i).myPrice);
+				txtrAttribute.setText("Color: " + ProductLists.listOfToyProducts.get(i).myBrand);
+				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfToyProducts.get(i).myQuantity);
+				lblImage.setIcon(new ImageIcon(ProductLists.listOfToyProducts.get(i).myImage));
+			}
+		});
+		btnNext.setBounds(321, 40, 105, 23);
+		getContentPane().add(btnNext);
+	
+		
+		JButton btnPrevious = new JButton("Previous");
+		btnPrevious.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				i = (i+2)%3;
+				System.out.println(i);
+				txtrProduct.setText("Product: " + ProductLists.listOfToyProducts.get(i).myType);
+				txtrPrice.setText("Price: $" + ProductLists.listOfToyProducts.get(i).myPrice);
+				txtrAttribute.setText("Color: " + ProductLists.listOfToyProducts.get(i).myBrand);
+				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfToyProducts.get(i).myQuantity);
+				lblImage.setIcon(new ImageIcon(ProductLists.listOfToyProducts.get(i).myImage));
+			}
+		});
+		btnPrevious.setBounds(335, 71, 91, 23);
+		getContentPane().add(btnPrevious);
+		
 	}
 }

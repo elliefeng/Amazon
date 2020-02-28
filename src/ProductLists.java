@@ -62,7 +62,7 @@ public class ProductLists {
 	public static void addToyProducts() {
 		Toys rubberChicken = new Toys(27.99, "Mattel", "Rubber Chicken", 600, "src/rubberchicken.jpg");
 		Toys stuffedAnimal = new Toys(4.95, "Hasbro", "Stuffed Animal", 9000, "src/stuffedanimal.jpg");
-		Toys lego = new Toys(274.99, "LEGO Corporation", "Ninjago Ultra Dragon", 678, "src/lego.jpg");
+		Toys lego = new Toys(274.99, "LEGO Corporation", "Ninjago Dragon", 678, "src/lego.jpg");
 		listOfToyProducts.add(rubberChicken);
 		listOfToyProducts.add(stuffedAnimal);
 		listOfToyProducts.add(lego);

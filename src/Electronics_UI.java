@@ -12,9 +12,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class Electronics_UI extends Product_UI{
- public static int i = 0;
+	public static int i = 0;
  
- public static JLabel lblImage = new JLabel("");
+	public static JLabel lblImage = new JLabel("");
 	
 	private static final long serialVersionUID = -5865436019373463725L;
 
@@ -38,11 +38,6 @@ public class Electronics_UI extends Product_UI{
 		i = test;
 		ProductLists.addElectronicProducts();
 		
-		
-		/*this.name = name;
-		this.price = price;
-		this.color = color;*/
-		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
@@ -52,23 +47,32 @@ public class Electronics_UI extends Product_UI{
 		getContentPane().add(lblImage);
 		
 		JLabel txtrProduct = new JLabel();
+		txtrProduct.setForeground(new Color(255, 255, 255));
 		txtrProduct.setText("Product: " + ProductLists.listOfElectronicProducts.get(i).myType);
 		txtrProduct.setBounds(28, 181, 132, 32);
 		getContentPane().add(txtrProduct);
+		txtrProduct.setOpaque(true);
+		txtrProduct.setBackground(new Color(34, 139, 34));
 		
 		JLabel txtrPrice = new JLabel();
+		txtrPrice.setForeground(new Color(255, 255, 255));
 		txtrPrice.setText("Price: $" + ProductLists.listOfElectronicProducts.get(i).myPrice);
 		txtrPrice.setBounds(193, 35, 132, 32);
 		getContentPane().add(txtrPrice);
+		txtrPrice.setOpaque(true);
+		txtrPrice.setBackground(new Color(34, 139, 34));
 		
 		JLabel txtrAttribute = new JLabel();
+		txtrAttribute.setForeground(new Color(255, 255, 255));
 		txtrAttribute.setText("Brand: " + ProductLists.listOfElectronicProducts.get(i).myBrand);
 		txtrAttribute.setBounds(193, 66, 132, 32);
 		getContentPane().add(txtrAttribute);
+		txtrAttribute.setOpaque(true);
+		txtrAttribute.setBackground(new Color(34, 139, 34));
 		
 		JButton btnAddCart = new JButton("Add to Cart");
 		btnAddCart.setOpaque(true);
-		btnAddCart.setBackground(new Color(240, 230, 140));
+		btnAddCart.setBackground(new Color(34, 139, 34));
 		btnAddCart.setBounds(193, 188, 217, 45);
 		getContentPane().add(btnAddCart);
 		
@@ -84,6 +88,8 @@ public class Electronics_UI extends Product_UI{
 		lblRemainingStock.setOpaque(true);
 		lblRemainingStock.setBounds(193, 96, 212, 28);
 		getContentPane().add(lblRemainingStock);
+		lblRemainingStock.setOpaque(true);
+		lblRemainingStock.setBackground(new Color(34, 139, 34));
 		
 		JButton btnNext = new JButton("Next");
 		btnNext.addActionListener(new ActionListener() {

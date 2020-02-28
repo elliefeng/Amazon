@@ -61,23 +61,32 @@ public class Clothing_UI extends Product_UI{
 		getContentPane().add(lblImage);
 		
 		JLabel txtrProduct = new JLabel();
+		txtrProduct.setForeground(new Color(255, 255, 255));
 		txtrProduct.setText("Product: " + ProductLists.listOfClothingProducts.get(i).myType);
 		txtrProduct.setBounds(28, 181, 132, 32);
 		getContentPane().add(txtrProduct);
+		txtrProduct.setOpaque(true);
+		txtrProduct.setBackground(new Color(34, 139, 34));
 		
 		JLabel txtrPrice = new JLabel();
+		txtrPrice.setForeground(new Color(255, 255, 255));
 		txtrPrice.setText("Price: $" + ProductLists.listOfClothingProducts.get(i).myPrice);
 		txtrPrice.setBounds(193, 35, 132, 32);
 		getContentPane().add(txtrPrice);
+		txtrPrice.setOpaque(true);
+		txtrPrice.setBackground(new Color(34, 139, 34));
 		
 		JLabel txtrAttribute = new JLabel();
+		txtrAttribute.setForeground(new Color(255, 255, 255));
 		txtrAttribute.setText("Color: " + ProductLists.listOfClothingProducts.get(i).myColor);
 		txtrAttribute.setBounds(193, 66, 132, 32);
 		getContentPane().add(txtrAttribute);
+		txtrAttribute.setOpaque(true);
+		txtrAttribute.setBackground(new Color(34, 139, 34));
 		
 		JButton btnAddCart = new JButton("Add to Cart");
 		btnAddCart.setOpaque(true);
-		btnAddCart.setBackground(new Color(240, 230, 140));
+		btnAddCart.setBackground(new Color(34, 139, 34));
 		btnAddCart.setBounds(193, 188, 217, 45);
 		getContentPane().add(btnAddCart);
 		
@@ -85,22 +94,30 @@ public class Clothing_UI extends Product_UI{
 		JComboBox quantityList = new JComboBox(quantity);
 		quantityList.setBounds(195, 143, 73, 44);
 		getContentPane().add(quantityList);
+		
 		JLabel lblNewLabel = new JLabel("Quantity");
 		lblNewLabel.setBounds(203, 130, 54, 16);
 		getContentPane().add(lblNewLabel);
+		lblNewLabel.setOpaque(true);
+		lblNewLabel.setBackground(new Color(34, 139, 34));
 		
 		String[] size = {"S","M","L","XL"};
 		JComboBox sizeList1 = new JComboBox(size);
 		sizeList1.setBounds(321, 143, 73, 44);
 		getContentPane().add(sizeList1);
+		
 		JLabel lblNewLabel_1 = new JLabel("Size");
 		lblNewLabel_1.setBounds(343, 130, 25, 16);
 		getContentPane().add(lblNewLabel_1);
+		lblNewLabel_1.setOpaque(true);
+		lblNewLabel_1.setBackground(new Color(34, 139, 34));
 		
 		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + ProductLists.listOfClothingProducts.get(i).myQuantity);
 		lblRemainingStock.setOpaque(true);
 		lblRemainingStock.setBounds(193, 96, 212, 28);
 		getContentPane().add(lblRemainingStock);
+		lblRemainingStock.setOpaque(true);
+		lblRemainingStock.setBackground(new Color(34, 139, 34));
 		
 		JButton btnNext = new JButton("Next");
 		btnNext.addActionListener(new ActionListener() {

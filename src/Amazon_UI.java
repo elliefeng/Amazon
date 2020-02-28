@@ -49,8 +49,8 @@ public class Amazon_UI extends JFrame {
 	public Amazon_UI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 652, 433);
-		
-		setBackground(new Color(252, 137, 36));
+		getContentPane().setBackground(new Color(0, 0, 139));
+		setBackground(new Color(34, 139, 34));
 		//setOpacity(true);
 		
         // Menu Objects 
@@ -58,6 +58,7 @@ public class Amazon_UI extends JFrame {
 		setJMenuBar(menuBar);
         
 		JMenu mnClothing = new JMenu("Clothing");
+		mnClothing.setForeground(new Color(34, 139, 34));
 		menuBar.add(mnClothing);
 		
 		JMenuItem mntmShirt = new JMenuItem("Shirt");
@@ -159,7 +160,7 @@ public class Amazon_UI extends JFrame {
 		
 		JMenuItem mntmFurniture = new JMenuItem("Couch");
 		mnHome.add(mntmFurniture);
-		mntmPhone.addActionListener(new ActionListener() {
+		mntmFurniture.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Home_UI frame = new Home_UI(/*"Coach",350.01, "15 ft x 5 ft"*/1);
 				frame.setVisible(true);

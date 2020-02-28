@@ -49,7 +49,10 @@ public class Amazon_UI extends JFrame {
 	public Amazon_UI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 652, 433);
-
+		
+		setBackground(new Color(252, 137, 36));
+		//setOpacity(true);
+		
         // Menu Objects 
         JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -124,7 +127,8 @@ public class Amazon_UI extends JFrame {
 		mnElectronics.add(mntmPhone);
 		mntmPhone.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Electronics_UI frame = new Electronics_UI("iPhone", 500.01, "Apple");
+				Electronics_UI frame = new Electronics_UI(/*"iPhone", 500.01, "Apple"*/0);
+				frame.lblImage.setIcon(new ImageIcon("src/nokia.jpg")); 
 				frame.setVisible(true);
 			}
 		});
@@ -133,7 +137,8 @@ public class Amazon_UI extends JFrame {
 		mnElectronics.add(mntmComputer);
 		mntmComputer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Electronics_UI frame = new Electronics_UI("Computer", 600.01, "Microsoft");
+				Electronics_UI frame = new Electronics_UI(/*"Computer", 600.01, "Microsoft"*/1);
+				frame.lblImage.setIcon(new ImageIcon("src/computer.jpg")); 
 				frame.setVisible(true);
 			}
 		});
@@ -142,7 +147,8 @@ public class Amazon_UI extends JFrame {
 		mnElectronics.add(mntmTV);
 		mntmTV.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Electronics_UI frame = new Electronics_UI("TV", 800.01, "Sony");
+				Electronics_UI frame = new Electronics_UI(/*"TV", 800.01, "Sony"*/2);
+				frame.lblImage.setIcon(new ImageIcon("src/tv.jpg")); 
 				frame.setVisible(true);
 			}
 		});

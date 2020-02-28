@@ -32,7 +32,7 @@ public class Toys_UI extends Product_UI{
 	}
 	
 	public Toys_UI(String name, double price, String ageGroup) {
-		super(name, price, ageGroup);
+		super();
 		lblAmazon.setVisible(false);
 		/*this.name = name;
 		this.price = price;

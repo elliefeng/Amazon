@@ -34,8 +34,11 @@ public class Electronics_UI extends Product_UI{
 	
 	public Electronics_UI(int test) {
 		super();
-		i = test;
 		lblAmazon.setVisible(false);
+		i = test;
+		ProductLists.addElectronicProducts();
+		
+		
 		/*this.name = name;
 		this.price = price;
 		this.color = color;*/
@@ -80,7 +83,7 @@ public class Electronics_UI extends Product_UI{
 		lblNewLabel.setBounds(203, 130, 54, 16);
 		getContentPane().add(lblNewLabel);
 		
-		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + ProductLists.listOfClothingProducts.get(i).myQuantity);
+		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + ProductLists.listOfElectronicProducts.get(i).myQuantity);
 		lblRemainingStock.setOpaque(true);
 		lblRemainingStock.setBounds(193, 96, 212, 28);
 		getContentPane().add(lblRemainingStock);

@@ -33,6 +33,7 @@ public class Search_UI extends Amazon_UI {
 	getContentPane().setLayout(null);
 	
 	getContentPane().remove(lblAmazon);
+	lblAmazon.setVisible(false);
 	
 	JTextField txtSearchForA = new JTextField();
 	txtSearchForA.setText("Search for a Product:");

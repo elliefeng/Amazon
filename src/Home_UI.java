@@ -17,13 +17,14 @@ public class Home_UI extends Product_UI{
 	public static String name;
 	public static double price;
 	public static String dimensions;
+	public static int i = 0;
 	private static final long serialVersionUID = -5865436019373463725L;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Home_UI frame = new Home_UI(name, price, dimensions);
+					Home_UI frame = new Home_UI(i);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -32,12 +33,11 @@ public class Home_UI extends Product_UI{
 		});
 	}
 	
-	public Home_UI(String name, double price, String dimensions) {
+	public Home_UI(int test) {
 		super();
 		lblAmazon.setVisible(false);
-		/*this.name = name;
-		this.price = price;
-		this.color = color;*/
+		i = test;
+		ProductLists.addClothingProducts();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

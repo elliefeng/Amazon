@@ -97,7 +97,7 @@ public class Amazon_UI extends JFrame {
 		mnToys.add(mntmChicken);
 		mntmChicken.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Toys_UI frame = new Toys_UI("Rubber Chicken", 10.99, "50+");
+				Toys_UI frame = new Toys_UI(/*"Rubber Chicken", 10.99, "50+"*/0);
 				frame.setVisible(true);
 			}
 		});
@@ -106,7 +106,7 @@ public class Amazon_UI extends JFrame {
 		mnToys.add(mntmLegos);
 		mntmLegos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Toys_UI frame = new Toys_UI("Legos", 15.99, "8-11");
+				Toys_UI frame = new Toys_UI(/*"Legos", 15.99, "8-11"*/2);
 				frame.setVisible(true);
 			}
 		});
@@ -115,7 +115,7 @@ public class Amazon_UI extends JFrame {
 		mnToys.add(mntmStuffedAnimals);
 		mntmStuffedAnimals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Toys_UI frame = new Toys_UI("Stuffed animals", 8.99, "5-10");
+				Toys_UI frame = new Toys_UI(/*"Stuffed animals", 8.99, "5-10"*/1);
 				frame.setVisible(true);
 			}
 		});
@@ -127,6 +127,7 @@ public class Amazon_UI extends JFrame {
 		mnElectronics.add(mntmPhone);
 		mntmPhone.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//new Electronics_UI(0).setVisible(true);
 				Electronics_UI frame = new Electronics_UI(/*"iPhone", 500.01, "Apple"*/0);
 				frame.lblImage.setIcon(new ImageIcon("src/nokia.jpg")); 
 				frame.setVisible(true);
@@ -160,7 +161,7 @@ public class Amazon_UI extends JFrame {
 		mnHome.add(mntmFurniture);
 		mntmPhone.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Home_UI frame = new Home_UI("Coach",350.01, "15 ft x 5 ft");
+				Home_UI frame = new Home_UI(/*"Coach",350.01, "15 ft x 5 ft"*/1);
 				frame.setVisible(true);
 			}
 		});
@@ -169,7 +170,7 @@ public class Amazon_UI extends JFrame {
 		mnHome.add(mntmDecor);
 		mntmDecor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Home_UI frame = new Home_UI("Table", 100.00, "10 ft x 15 ft");
+				Home_UI frame = new Home_UI(/*"Table", 100.00, "10 ft x 15 ft"*/0);
 				frame.setVisible(true);
 			}
 		});

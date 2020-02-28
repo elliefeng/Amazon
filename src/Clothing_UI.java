@@ -21,9 +21,6 @@ import java.awt.event.ActionEvent;
 
 public class Clothing_UI extends Product_UI{
 	
-	private static String name;
-	private static double price;
-	private static String color;
 	public static int i = 0;
 	
 	public static JLabel lblImage = new JLabel("");
@@ -139,10 +136,9 @@ public class Clothing_UI extends Product_UI{
 		
 		
 		
+		
+		
 	}
 
-	public static void DisplayPicture(Image image) {
-		lblImage.setIcon(new ImageIcon(image));
-	    lblImage.setBounds(28, 31, 132, 138);
-	}
+	
 }

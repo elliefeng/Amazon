@@ -24,7 +24,7 @@ public class Product_UI extends Amazon_UI {
 	private static String name;
 	private static double price;
 	private static String attribute;
-	private static int stock=5;
+	private static int stock;
 	private JLabel lblImage;
 	
 	public static void main(String[] args) {
@@ -48,11 +48,6 @@ public class Product_UI extends Amazon_UI {
 		setBackground(Color.ORANGE);
 		getContentPane().setLayout(null);
 	    
-	    lblImage = new JLabel("");
-	    java.awt.Image image = new ImageIcon("nike.png").getImage();
-	    lblImage.setIcon(new ImageIcon(image));
-	    lblImage.setBounds(28,31, 135, 159);
-	    getContentPane().add(lblImage);
 		
 		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + stock);
 		lblRemainingStock.setOpaque(true);
@@ -67,17 +62,7 @@ public class Product_UI extends Amazon_UI {
 		lblNewLabel.setBounds(203, 130, 54, 16);
 		getContentPane().add(lblNewLabel);
 		
-		JButton btnAddCart = new JButton("Add to Cart");
-		btnAddCart.setOpaque(true);
-		btnAddCart.setBackground(new Color(240, 230, 140));
-		btnAddCart.setBounds(193, 188, 217, 45);
-		getContentPane().add(btnAddCart);
-		btnAddCart.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String text = (String)quantityList.getSelectedItem();
-				int quant = Integer.parseInt(text);
-				stock = stock - quant;
-				lblRemainingStock.setText("Remaining Stock: " + stock);
+		
 			}
 		});
 		

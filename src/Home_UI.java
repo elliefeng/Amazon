@@ -35,7 +35,7 @@ public class Home_UI extends Product_UI{
 	
 	public Home_UI(int test) {
 		super();
-		//lblAmazon.setVisible(false);
+		lblAmazon.setVisible(false);
 		i = test;
 		ProductLists.addClothingProducts();
 		

@@ -37,7 +37,7 @@ public class Cart_UI extends Amazon_UI {
 			setBounds(100, 100, 450, 300);
 			getContentPane().setLayout(null);
 			
-			getContentPane().remove(lblAmazon);
+			//getContentPane().remove(lblAmazon);
 			
 			JLabel lblCart = new JLabel("My Cart");
 			lblCart.setOpaque(true);

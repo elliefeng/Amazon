@@ -20,7 +20,7 @@ import java.awt.BorderLayout;
  *
  */
 public class Amazon_UI extends JFrame {
-	JLabel lblAmazon = new JLabel("Welcome to Amazon!");
+	//JLabel lblAmazon = new JLabel("Welcome to Amazon!");
 
 	/**
 	 * 
@@ -200,12 +200,12 @@ public class Amazon_UI extends JFrame {
 			}
 		});
 		
-		//JLabel lblAmazon = new JLabel("Welcome to Amazon!");
-		/*lblAmazon.setOpaque(true);
-		lblAmazon.setBackground(Color.ORANGE);
-		lblAmazon.setBounds(6, 6, 617, 377);
+		JLabel lblAmazon = new JLabel("");
+		lblAmazon.setOpaque(true);
+		//lblAmazon.setBackground(Color.ORANGE);
+		//lblAmazon.setBounds(6, 6, 617, 377);
 		getContentPane().add(lblAmazon); 
-		lblAmazon.setIcon(new ImageIcon("src/ellie.jpg"));*/
+		lblAmazon.setIcon(new ImageIcon("src/ellie.jpg"));
 		
 		
 	}

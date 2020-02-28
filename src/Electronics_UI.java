@@ -47,10 +47,7 @@ public class Electronics_UI extends Product_UI{
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 		
-		JLabel lblImage = new JLabel("Image Goes Here");
-		lblImage.setHorizontalAlignment(JLabel. CENTER);
-		lblImage.setOpaque(true);
-		lblImage.setBackground(Color.PINK);
+		lblImage.setIcon(new ImageIcon(ProductLists.listOfElectronicProducts.get(i).myImage)); 
 		lblImage.setBounds(28, 31, 132, 138);
 		getContentPane().add(lblImage);
 		

@@ -63,8 +63,8 @@ public class Product_UI extends Amazon_UI {
 		getContentPane().add(lblNewLabel);
 		
 		
-			}
-		});
-		
-	}
+			
+	
+}		
+	
 }

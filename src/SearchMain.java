@@ -65,7 +65,7 @@ public class SearchMain
 			  //frame10.lblImage.setIcon(new ImageIcon("src/computer.jpg")); 
 			  frame10.setVisible(true);
   			break;
-    	  case "TV":
+    	  case "television":
     		  /*Electronics_UI frame11 = new Electronics_UI("TV", 800.00, "Sony");
   			  frame11.setVisible(true); */
     		  Electronics_UI frame11 = new Electronics_UI(/*"TV", 800.01, "Sony"*/2);

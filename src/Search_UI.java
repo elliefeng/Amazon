@@ -86,9 +86,9 @@ public class Search_UI extends Amazon_UI {
 		}
 	});
 	errorMessage.setForeground(Color.RED);
-	errorMessage.setFont(new Font("Iowan Old Style", Font.BOLD, 15));
+	errorMessage.setFont(new Font("Dialog", Font.BOLD, 32));
 	
-	errorMessage.setBounds(68, 359, 490, 60);
+	errorMessage.setBounds(68, 359, 527, 60);
 	getContentPane().add(errorMessage);
 	errorMessage.setText("");
 	

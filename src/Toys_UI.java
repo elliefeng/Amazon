@@ -77,28 +77,38 @@ public class Toys_UI extends Product_UI{
 		txtrAttribute.setOpaque(true);
 		txtrAttribute.setBackground(new Color(34, 139, 34));
 		
-		JButton btnAddCart = new JButton("Add to Cart");
-		btnAddCart.setOpaque(true);
-		btnAddCart.setBackground(new Color(34, 139, 34));
-		btnAddCart.setBounds(209, 186, 217, 45);
-		getContentPane().add(btnAddCart);
+		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + ProductLists.listOfToyProducts.get(i).myQuantity);
+		lblRemainingStock.setForeground(new Color(255, 255, 255));
+		lblRemainingStock.setOpaque(true);
+		lblRemainingStock.setBounds(193, 96, 212, 28);
+		getContentPane().add(lblRemainingStock);
+		lblRemainingStock.setOpaque(true);
+		lblRemainingStock.setBackground(new Color(34, 139, 34));
 		
 		String[] quantity = {"1","2","3","4","5"};
 		JComboBox quantityList = new JComboBox(quantity);
 		quantityList.setBounds(195, 143, 73, 44);
 		getContentPane().add(quantityList);
 		JLabel lblNewLabel = new JLabel("Quantity");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(203, 130, 54, 16);
 		getContentPane().add(lblNewLabel);
 		lblNewLabel.setOpaque(true);
 		lblNewLabel.setBackground(new Color(34, 139, 34));
 		
-		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + ProductLists.listOfToyProducts.get(i).myQuantity);
-		lblRemainingStock.setOpaque(true);
-		lblRemainingStock.setBounds(193, 96, 212, 28);
-		getContentPane().add(lblRemainingStock);
-		lblRemainingStock.setOpaque(true);
-		lblRemainingStock.setBackground(new Color(34, 139, 34));
+		JButton btnAddCart = new JButton("Add to Cart");
+		btnAddCart.setOpaque(true);
+		btnAddCart.setBackground(new Color(34, 139, 34));
+		btnAddCart.setBounds(193, 188, 217, 45);
+		getContentPane().add(btnAddCart);
+		btnAddCart.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String text = (String)quantityList.getSelectedItem();
+				int quant = Integer.parseInt(text);
+				int stock = ProductLists.listOfToyProducts.get(i).myQuantity - quant;
+				lblRemainingStock.setText("Remaining Stock: " + stock);
+			}
+		});
 		
 		JButton btnNext = new JButton("Next");
 		btnNext.addActionListener(new ActionListener() {

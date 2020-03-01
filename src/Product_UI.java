@@ -49,14 +49,14 @@ public class Product_UI extends Amazon_UI {
 		getContentPane().setLayout(null);
 	    
 		
-		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + stock);
+		/*JLabel lblRemainingStock = new JLabel("Remaining Stock: " + stock);
 		lblRemainingStock.setForeground(new Color(255, 255, 255));
 		lblRemainingStock.setOpaque(true);
 		lblRemainingStock.setBounds(193, 96, 137, 28);
 		getContentPane().add(lblRemainingStock);
-		lblRemainingStock.setBackground(new Color(34, 139, 34));
+		lblRemainingStock.setBackground(new Color(34, 139, 34));*/
 		
-		String[] quantity = {"1","2","3","4","5"};
+		/*String[] quantity = {"1","2","3","4","5"};
 		JComboBox quantityList = new JComboBox(quantity);
 		quantityList.setBackground(new Color(34, 139, 34));
 		quantityList.setBounds(195, 143, 73, 44);
@@ -67,7 +67,7 @@ public class Product_UI extends Amazon_UI {
 		lblNewLabel.setBounds(203, 130, 54, 16);
 		getContentPane().add(lblNewLabel);
 		lblNewLabel.setOpaque(true);
-		lblNewLabel.setBackground(new Color(34, 139, 34));
+		lblNewLabel.setBackground(new Color(34, 139, 34));*/
 		
 		
 			

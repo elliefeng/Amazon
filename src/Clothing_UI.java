@@ -62,7 +62,7 @@ public class Clothing_UI extends Product_UI{
 		
 		JLabel txtrProduct = new JLabel();
 		txtrProduct.setForeground(new Color(255, 255, 255));
-		txtrProduct.setText("Product: " + ProductLists.listOfClothingProducts.get(i).myType);
+		txtrProduct.setText(" Product: <dynamic>");
 		txtrProduct.setBounds(28, 181, 132, 32);
 		getContentPane().add(txtrProduct);
 		txtrProduct.setOpaque(true);

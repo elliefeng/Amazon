@@ -48,7 +48,7 @@ public class Amazon_UI extends JFrame {
 	 */
 	public Amazon_UI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 652, 433);
+		setBounds(100, 100, 738, 536);
 		getContentPane().setBackground(new Color(0, 0, 139));
 		setBackground(new Color(34, 139, 34));
 		//setOpacity(true);

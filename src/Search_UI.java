@@ -88,7 +88,7 @@ public class Search_UI extends Amazon_UI {
 	errorMessage.setForeground(Color.RED);
 	errorMessage.setFont(new Font("Iowan Old Style", Font.BOLD, 15));
 	
-	errorMessage.setBounds(38, 159, 376, 46);
+	errorMessage.setBounds(68, 359, 490, 60);
 	getContentPane().add(errorMessage);
 	errorMessage.setText("");
 	

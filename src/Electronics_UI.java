@@ -39,7 +39,7 @@ public class Electronics_UI extends Product_UI{
 		ProductLists.addElectronicProducts();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 497, 372);
 		getContentPane().setLayout(null);
 		
 		lblImage.setIcon(new ImageIcon(ProductLists.listOfElectronicProducts.get(i).myImage)); 
@@ -48,7 +48,7 @@ public class Electronics_UI extends Product_UI{
 		
 		JLabel txtrProduct = new JLabel();
 		txtrProduct.setForeground(new Color(255, 255, 255));
-		txtrProduct.setText("Product: " + ProductLists.listOfElectronicProducts.get(i).myType);
+		txtrProduct.setText(" Product: <dynamic>");
 		txtrProduct.setBounds(28, 181, 132, 32);
 		getContentPane().add(txtrProduct);
 		txtrProduct.setOpaque(true);
@@ -71,17 +71,18 @@ public class Electronics_UI extends Product_UI{
 		txtrAttribute.setBackground(new Color(34, 139, 34));
 		
 		JButton btnAddCart = new JButton("Add to Cart");
+		btnAddCart.setForeground(new Color(0, 0, 0));
 		btnAddCart.setOpaque(true);
-		btnAddCart.setBackground(new Color(34, 139, 34));
-		btnAddCart.setBounds(193, 188, 217, 45);
+		btnAddCart.setBackground(new Color(218, 165, 32));
+		btnAddCart.setBounds(193, 203, 217, 45);
 		getContentPane().add(btnAddCart);
 		
 		String[] quantity = {"1","2","3","4","5"};
 		JComboBox quantityList = new JComboBox(quantity);
-		quantityList.setBounds(195, 143, 73, 44);
+		quantityList.setBounds(193, 143, 73, 44);
 		getContentPane().add(quantityList);
 		JLabel lblNewLabel = new JLabel("Quantity");
-		lblNewLabel.setBounds(203, 130, 54, 16);
+		lblNewLabel.setBounds(203, 130, 166, 16);
 		getContentPane().add(lblNewLabel);
 		
 		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + ProductLists.listOfElectronicProducts.get(i).myQuantity);
@@ -103,7 +104,7 @@ public class Electronics_UI extends Product_UI{
 				lblImage.setIcon(new ImageIcon(ProductLists.listOfElectronicProducts.get(i).myImage));
 			}
 		});
-		btnNext.setBounds(321, 40, 105, 23);
+		btnNext.setBounds(335, 31, 105, 23);
 		getContentPane().add(btnNext);
 	
 		
@@ -121,7 +122,7 @@ public class Electronics_UI extends Product_UI{
 			}
 			
 		});
-		btnPrevious.setBounds(335, 71, 91, 23);
+		btnPrevious.setBounds(335, 57, 105, 23);
 		getContentPane().add(btnPrevious);
 		
 	}

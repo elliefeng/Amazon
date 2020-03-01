@@ -42,21 +42,21 @@ public class Toys_UI extends Product_UI{
 		ProductLists.addToyProducts();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 516, 363);
 		getContentPane().setLayout(null);
 		
 		JLabel lblImage = new JLabel("");
 		lblImage.setIcon(new ImageIcon(ProductLists.listOfToyProducts.get(i).myImage)); 
 		lblImage.setHorizontalAlignment(JLabel. CENTER);
-		lblImage.setOpaque(true);
-		lblImage.setBackground(Color.PINK);
+		//lblImage.setOpaque(true);
+		//lblImage.setBackground(Color.PINK);
 		lblImage.setBounds(28, 35, 96, 96);
 		getContentPane().add(lblImage);
 		
 		JLabel txtrProduct = new JLabel();
 		txtrProduct.setForeground(new Color(255, 255, 255));
-		txtrProduct.setText("Product: " + ProductLists.listOfToyProducts.get(i).myType);
-		txtrProduct.setBounds(6, 171, 191, 32);
+		txtrProduct.setText(" Product: <dynamic>");
+		txtrProduct.setBounds(6, 171, 174, 32);
 		getContentPane().add(txtrProduct);
 		txtrProduct.setOpaque(true);
 		txtrProduct.setBackground(new Color(34, 139, 34));
@@ -78,14 +78,16 @@ public class Toys_UI extends Product_UI{
 		txtrAttribute.setBackground(new Color(34, 139, 34));
 		
 		JButton btnAddCart = new JButton("Add to Cart");
+		btnAddCart.setForeground(new Color(0, 0, 0));
 		btnAddCart.setOpaque(true);
-		btnAddCart.setBackground(new Color(34, 139, 34));
-		btnAddCart.setBounds(209, 186, 217, 45);
+		btnAddCart.setBackground(new Color(218, 165, 32));
+		btnAddCart.setBounds(195, 200, 217, 45);
 		getContentPane().add(btnAddCart);
 		
 		String[] quantity = {"1","2","3","4","5"};
 		JComboBox quantityList = new JComboBox(quantity);
-		quantityList.setBounds(195, 143, 73, 44);
+		quantityList.setForeground(new Color(255, 255, 255));
+		quantityList.setBounds(195, 140, 73, 44);
 		getContentPane().add(quantityList);
 		JLabel lblNewLabel = new JLabel("Quantity");
 		lblNewLabel.setBounds(203, 130, 54, 16);
@@ -112,7 +114,7 @@ public class Toys_UI extends Product_UI{
 				lblImage.setIcon(new ImageIcon(ProductLists.listOfToyProducts.get(i).myImage));
 			}
 		});
-		btnNext.setBounds(321, 40, 105, 23);
+		btnNext.setBounds(335, 35, 105, 23);
 		getContentPane().add(btnNext);
 	
 		
@@ -128,7 +130,7 @@ public class Toys_UI extends Product_UI{
 				lblImage.setIcon(new ImageIcon(ProductLists.listOfToyProducts.get(i).myImage));
 			}
 		});
-		btnPrevious.setBounds(335, 71, 91, 23);
+		btnPrevious.setBounds(335, 66, 105, 23);
 		getContentPane().add(btnPrevious);
 		
 	}

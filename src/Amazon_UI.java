@@ -92,6 +92,7 @@ public class Amazon_UI extends JFrame {
 		});
 		
 		JMenu mnToys = new JMenu("Toys");
+		mnToys.setForeground(new Color(34, 139, 34));
 		menuBar.add(mnToys);
 		
 		JMenuItem mntmChicken = new JMenuItem("Rubber Chicken");
@@ -122,6 +123,7 @@ public class Amazon_UI extends JFrame {
 		});
 		
 		JMenu mnElectronics = new JMenu("Electronics");
+		mnElectronics.setForeground(new Color(34, 139, 34));
 		menuBar.add(mnElectronics);
 
 		JMenuItem mntmPhone = new JMenuItem("Phone");
@@ -156,6 +158,7 @@ public class Amazon_UI extends JFrame {
 		});
 		
 		JMenu mnHome = new JMenu("Home");
+		mnHome.setForeground(new Color(34, 139, 34));
 		menuBar.add(mnHome);
 		
 		JMenuItem mntmFurniture = new JMenuItem("Couch");
@@ -177,6 +180,7 @@ public class Amazon_UI extends JFrame {
 		});
 		
 		JMenu mnSearch = new JMenu("Search");
+		mnSearch.setForeground(new Color(0, 0, 128));
 		menuBar.add(mnSearch);
 		
 		JMenuItem mntmSearch = new JMenuItem("Search for a product");
@@ -189,6 +193,7 @@ public class Amazon_UI extends JFrame {
 		});
 		
 		JMenu Cart = new JMenu("My Cart");
+		Cart.setForeground(new Color(0, 0, 139));
 		menuBar.add(Cart);
 		
 		JMenuItem mntmCheckout = new JMenuItem("Proceed to Checkout");

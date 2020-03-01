@@ -52,7 +52,7 @@ public class Clothing_UI extends Product_UI{
 		this.color = color;*/
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 480, 360);
 		getContentPane().setLayout(null);
 		
 		JLabel lblImage = new JLabel("");
@@ -85,13 +85,15 @@ public class Clothing_UI extends Product_UI{
 		txtrAttribute.setBackground(new Color(34, 139, 34));
 		
 		JButton btnAddCart = new JButton("Add to Cart");
+		btnAddCart.setForeground(new Color(0, 0, 0));
 		btnAddCart.setOpaque(true);
-		btnAddCart.setBackground(new Color(34, 139, 34));
-		btnAddCart.setBounds(193, 188, 217, 45);
+		btnAddCart.setBackground(new Color(218, 165, 32));
+		btnAddCart.setBounds(193, 203, 217, 45);
 		getContentPane().add(btnAddCart);
 		
 		String[] quantity = {"1","2","3","4","5"};
 		JComboBox quantityList = new JComboBox(quantity);
+		quantityList.setForeground(Color.WHITE);
 		quantityList.setBounds(195, 143, 73, 44);
 		getContentPane().add(quantityList);
 		
@@ -103,10 +105,12 @@ public class Clothing_UI extends Product_UI{
 		
 		String[] size = {"S","M","L","XL"};
 		JComboBox sizeList1 = new JComboBox(size);
+		sizeList1.setBackground(new Color(34, 139, 34));
 		sizeList1.setBounds(321, 143, 73, 44);
 		getContentPane().add(sizeList1);
 		
 		JLabel lblNewLabel_1 = new JLabel("Size");
+		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setBounds(343, 130, 25, 16);
 		getContentPane().add(lblNewLabel_1);
 		lblNewLabel_1.setOpaque(true);
@@ -131,7 +135,7 @@ public class Clothing_UI extends Product_UI{
 				lblImage.setIcon(new ImageIcon(ProductLists.listOfClothingProducts.get(i).myImage));
 			}
 		});
-		btnNext.setBounds(321, 40, 105, 23);
+		btnNext.setBounds(338, 40, 105, 23);
 		getContentPane().add(btnNext);
 	
 		
@@ -147,7 +151,7 @@ public class Clothing_UI extends Product_UI{
 				lblImage.setIcon(new ImageIcon(ProductLists.listOfClothingProducts.get(i).myImage));
 			}
 		});
-		btnPrevious.setBounds(335, 71, 91, 23);
+		btnPrevious.setBounds(339, 71, 104, 23);
 		getContentPane().add(btnPrevious);
 		
 		

@@ -43,20 +43,20 @@ public class Home_UI extends Product_UI{
 		ProductLists.addHomeProducts();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 511, 373);
 		getContentPane().setLayout(null);
 		
 		JLabel lblImage = new JLabel("");
 		lblImage.setIcon(new ImageIcon(ProductLists.listOfHomeProducts.get(i).myImage)); 
 		lblImage.setHorizontalAlignment(JLabel. CENTER);
-		lblImage.setOpaque(true);
-		lblImage.setBackground(Color.PINK);
+		//lblImage.setOpaque(true);
+		//lblImage.setBackground(Color.PINK);
 		lblImage.setBounds(28, 35, 96, 96);
 		getContentPane().add(lblImage);
 		
 		JLabel txtrProduct = new JLabel();
 		txtrProduct.setForeground(new Color(255, 255, 255));
-		txtrProduct.setText("Product: " + ProductLists.listOfHomeProducts.get(i).myType);
+		txtrProduct.setText(" Product: <dynamic>");
 		txtrProduct.setBounds(28, 181, 132, 32);
 		getContentPane().add(txtrProduct);
 		txtrProduct.setOpaque(true);
@@ -79,9 +79,10 @@ public class Home_UI extends Product_UI{
 		txtrAttribute.setBackground(new Color(34, 139, 34));
 		
 		JButton btnAddCart = new JButton("Add to Cart");
+		btnAddCart.setForeground(new Color(0, 0, 0));
 		btnAddCart.setOpaque(true);
-		btnAddCart.setBackground(new Color(34, 139, 34));
-		btnAddCart.setBounds(193, 188, 217, 45);
+		btnAddCart.setBackground(new Color(218, 165, 32));
+		btnAddCart.setBounds(193, 206, 217, 45);
 		getContentPane().add(btnAddCart);
 		
 		String[] quantity = {"1","2","3","4","5"};
@@ -113,7 +114,7 @@ public class Home_UI extends Product_UI{
 				lblImage.setIcon(new ImageIcon(ProductLists.listOfHomeProducts.get(i).myImage));
 			}
 		});
-		btnNext.setBounds(321, 40, 105, 23);
+		btnNext.setBounds(334, 35, 105, 23);
 		getContentPane().add(btnNext);
 	
 		
@@ -129,7 +130,7 @@ public class Home_UI extends Product_UI{
 				lblImage.setIcon(new ImageIcon(ProductLists.listOfHomeProducts.get(i).myImage));
 			}
 		});
-		btnPrevious.setBounds(335, 71, 91, 23);
+		btnPrevious.setBounds(334, 66, 105, 23);
 		getContentPane().add(btnPrevious);
 		
 	}

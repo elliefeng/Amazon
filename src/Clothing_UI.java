@@ -83,14 +83,6 @@ public class Clothing_UI extends Product_UI{
 		getContentPane().add(txtrAttribute);
 		txtrAttribute.setOpaque(true);
 		txtrAttribute.setBackground(new Color(34, 139, 34));
-		
-
-		/*JButton btnAddCart = new JButton("Add to Cart");
-		btnAddCart.setForeground(new Color(0, 0, 0));
-		btnAddCart.setOpaque(true);
-		btnAddCart.setBackground(new Color(218, 165, 32));
-		btnAddCart.setBounds(193, 203, 217, 45);
-		getContentPane().add(btnAddCart);*/
 
 		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + ProductLists.listOfClothingProducts.get(i).myQuantity);
 		lblRemainingStock.setForeground(new Color(255, 255, 255));
@@ -103,7 +95,7 @@ public class Clothing_UI extends Product_UI{
 		
 		String[] quantity = {"1","2","3","4","5"};
 		JComboBox quantityList = new JComboBox(quantity);
-		quantityList.setForeground(Color.WHITE);
+		quantityList.setForeground(new Color(0, 0, 0));
 		quantityList.setBounds(195, 143, 73, 44);
 		getContentPane().add(quantityList);
 		JLabel lblNewLabel = new JLabel("Quantity");
@@ -122,8 +114,8 @@ public class Clothing_UI extends Product_UI{
 			public void actionPerformed(ActionEvent e) {
 				String text = (String)quantityList.getSelectedItem();
 				int quant = Integer.parseInt(text);
-				int stock = ProductLists.listOfClothingProducts.get(i).myQuantity - quant;
-				lblRemainingStock.setText("Remaining Stock: " + stock);
+				ProductLists.listOfClothingProducts.get(i).myQuantity = ProductLists.listOfClothingProducts.get(i).myQuantity - quant;
+				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfClothingProducts.get(i).myQuantity);
 			}
 		});
 		
@@ -134,11 +126,8 @@ public class Clothing_UI extends Product_UI{
 		getContentPane().add(sizeList1);
 		
 		JLabel lblNewLabel_1 = new JLabel("Size");
-
 		lblNewLabel_1.setForeground(Color.WHITE);
-
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
-
 		lblNewLabel_1.setBounds(343, 130, 25, 16);
 		getContentPane().add(lblNewLabel_1);
 		lblNewLabel_1.setOpaque(true);

@@ -1,3 +1,4 @@
+package View;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -7,6 +8,9 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
+import Control.SearchMain;
+
 import javax.swing.JLabel;
 
 public class Search_UI extends Amazon_UI {

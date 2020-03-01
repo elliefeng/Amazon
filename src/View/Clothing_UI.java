@@ -1,3 +1,5 @@
+package View;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Image;
@@ -6,6 +8,8 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.imageio.ImageIO;
 import java.io.File;
 import javax.imageio.ImageIO;
@@ -16,23 +20,30 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
+import Control.ProductList;
+import Model.Clothing;
+import Model.Product;
+import Model.Product.PRODUCT_TYPE;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Clothing_UI extends Product_UI{
-	
-	public static int i = 0;
-	
-	public static JLabel lblImage = new JLabel("");
-	
+	int i;							// index for clothing items
+	ArrayList<Object> clothes;
+	Clothing item;
+
+	public static JLabel lblImage = new JLabel("");	
 	private static final long serialVersionUID = 1048257216723871342L;
+	
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ProductLists.addClothingProducts();
-					Clothing_UI frame = new Clothing_UI(i);
+					//ProductLists.addProducts(Product.PRODUCT_TYPE.CLOTHING);
+					Clothing_UI frame = new Clothing_UI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,11 +52,13 @@ public class Clothing_UI extends Product_UI{
 		});
 	}
 	
-	public Clothing_UI(int test) {
+	public Clothing_UI() {
 		super();
+		i = 0;
 		lblAmazon.setVisible(false);
-		i = test;
-		ProductLists.addClothingProducts();
+		clothes = super.products.FilteredProductList(PRODUCT_TYPE.CLOTHING);
+		Clothing item = (Clothing) clothes.get(i);
+
 		
 		/*this.name = name;
 		this.price = price;
@@ -56,7 +69,7 @@ public class Clothing_UI extends Product_UI{
 		getContentPane().setLayout(null);
 		
 		JLabel lblImage = new JLabel("");
-	    lblImage.setIcon(new ImageIcon(ProductLists.listOfClothingProducts.get(i).myImage)); 
+	    lblImage.setIcon(new ImageIcon(item.myImage));
 		lblImage.setBounds(28, 35, 96, 96);
 		getContentPane().add(lblImage);
 		
@@ -70,7 +83,7 @@ public class Clothing_UI extends Product_UI{
 		
 		JLabel txtrPrice = new JLabel();
 		txtrPrice.setForeground(new Color(255, 255, 255));
-		txtrPrice.setText("Price: $" + ProductLists.listOfClothingProducts.get(i).myPrice);
+		txtrPrice.setText("Price: $" + item.myPrice);
 		txtrPrice.setBounds(193, 35, 132, 32);
 		getContentPane().add(txtrPrice);
 		txtrPrice.setOpaque(true);
@@ -78,13 +91,13 @@ public class Clothing_UI extends Product_UI{
 		
 		JLabel txtrAttribute = new JLabel();
 		txtrAttribute.setForeground(new Color(255, 255, 255));
-		txtrAttribute.setText("Color: " + ProductLists.listOfClothingProducts.get(i).myColor);
+		txtrAttribute.setText("Color: " + item.myColor);
 		txtrAttribute.setBounds(193, 66, 132, 32);
 		getContentPane().add(txtrAttribute);
 		txtrAttribute.setOpaque(true);
 		txtrAttribute.setBackground(new Color(34, 139, 34));
 
-		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + ProductLists.listOfClothingProducts.get(i).myQuantity);
+		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + item.myQuantity);
 		lblRemainingStock.setForeground(new Color(255, 255, 255));
 		lblRemainingStock.setOpaque(true);
 		lblRemainingStock.setBounds(193, 96, 212, 28);
@@ -114,8 +127,8 @@ public class Clothing_UI extends Product_UI{
 			public void actionPerformed(ActionEvent e) {
 				String text = (String)quantityList.getSelectedItem();
 				int quant = Integer.parseInt(text);
-				ProductLists.listOfClothingProducts.get(i).myQuantity = ProductLists.listOfClothingProducts.get(i).myQuantity - quant;
-				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfClothingProducts.get(i).myQuantity);
+				item.myQuantity = item.myQuantity - quant;
+				lblRemainingStock.setText("Remaining Stock: " + item.myQuantity);
 			}
 		});
 		
@@ -137,13 +150,15 @@ public class Clothing_UI extends Product_UI{
 		JButton btnNext = new JButton("Next");
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				i = (i+1)%3;
+				i = (i+1)%clothes.size();
 				System.out.println(i);
-				txtrProduct.setText("Product: " + ProductLists.listOfClothingProducts.get(i).myType);
-				txtrPrice.setText("Price: $" + ProductLists.listOfClothingProducts.get(i).myPrice);
-				txtrAttribute.setText("Color: " + ProductLists.listOfClothingProducts.get(i).myColor);
-				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfClothingProducts.get(i).myQuantity);
-				lblImage.setIcon(new ImageIcon(ProductLists.listOfClothingProducts.get(i).myImage));
+				Clothing item = (Clothing) clothes.get(i);
+
+				txtrProduct.setText("Product: " + item.myType);
+				txtrPrice.setText("Price: $" + item.myPrice);
+				txtrAttribute.setText("Color: " + item.myColor);
+				lblRemainingStock.setText("Remaining Stock: " + item.myQuantity);
+				lblImage.setIcon(new ImageIcon(item.myImage));
 			}
 		});
 		btnNext.setBounds(338, 40, 105, 23);
@@ -153,21 +168,19 @@ public class Clothing_UI extends Product_UI{
 		JButton btnPrevious = new JButton("Previous");
 		btnPrevious.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				i = (i+2)%3;
+				i = i > 0 ? (i-1) : (clothes.size()-1);
 				System.out.println(i);
-				txtrProduct.setText("Product: " + ProductLists.listOfClothingProducts.get(i).myType);
-				txtrPrice.setText("Price: $" + ProductLists.listOfClothingProducts.get(i).myPrice);
-				txtrAttribute.setText("Color: " + ProductLists.listOfClothingProducts.get(i).myColor);
-				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfClothingProducts.get(i).myQuantity);
-				lblImage.setIcon(new ImageIcon(ProductLists.listOfClothingProducts.get(i).myImage));
+				Clothing item = (Clothing) clothes.get(i);
+
+				txtrProduct.setText("Product: " + item.myType);
+				txtrPrice.setText("Price: $" + item.myPrice);
+				txtrAttribute.setText("Color: " + item.myColor);
+				lblRemainingStock.setText("Remaining Stock: " + item.myQuantity);
+				lblImage.setIcon(new ImageIcon(item.myImage));
 			}
 		});
 		btnPrevious.setBounds(339, 71, 104, 23);
-		getContentPane().add(btnPrevious);
-		
-		
-		
-		
+		getContentPane().add(btnPrevious);	
 		
 		
 	}

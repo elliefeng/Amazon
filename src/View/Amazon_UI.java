@@ -1,3 +1,4 @@
+package View;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.EventQueue;
@@ -10,6 +11,9 @@ import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+
+import Control.ProductList;
+
 import java.awt.BorderLayout;
 
 /** Menu<br>
@@ -21,6 +25,7 @@ import java.awt.BorderLayout;
  */
 public class Amazon_UI extends JFrame {
 	JLabel lblAmazon = new JLabel("");
+	ProductList products = new ProductList();
 
 	/**
 	 * 

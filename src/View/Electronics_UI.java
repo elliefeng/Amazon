@@ -1,3 +1,4 @@
+package View;
 
 
 import java.awt.Color;
@@ -11,22 +12,21 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Toys_UI extends Product_UI{
+import Control.ProductLists;
 
-	/**
-	 * 
-	 */
-	public static String name;
-	public static double price;
-	public static String ageGroup;
+public class Electronics_UI extends Product_UI{
 	public static int i = 0;
+ 
+	public static JLabel lblImage = new JLabel("");
+	
 	private static final long serialVersionUID = -5865436019373463725L;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Toys_UI frame = new Toys_UI(i);
+					ProductLists.addElectronicProducts();
+					Electronics_UI frame = new Electronics_UI(i);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,35 +35,31 @@ public class Toys_UI extends Product_UI{
 		});
 	}
 	
-	public Toys_UI(int test) {
+	public Electronics_UI(int test) {
 		super();
 		lblAmazon.setVisible(false);
 		i = test;
-		ProductLists.addToyProducts();
+		ProductLists.addElectronicProducts();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 516, 363);
+		setBounds(100, 100, 497, 372);
 		getContentPane().setLayout(null);
 		
-		JLabel lblImage = new JLabel("");
-		lblImage.setIcon(new ImageIcon(ProductLists.listOfToyProducts.get(i).myImage)); 
-		lblImage.setHorizontalAlignment(JLabel. CENTER);
-		//lblImage.setOpaque(true);
-		//lblImage.setBackground(Color.PINK);
-		lblImage.setBounds(28, 35, 96, 96);
+		lblImage.setIcon(new ImageIcon(ProductLists.listOfElectronicProducts.get(i).myImage)); 
+		lblImage.setBounds(28, 31, 132, 138);
 		getContentPane().add(lblImage);
 		
 		JLabel txtrProduct = new JLabel();
 		txtrProduct.setForeground(new Color(255, 255, 255));
-		txtrProduct.setText(" Product: " + ProductLists.listOfToyProducts.get(i).myType);
-		txtrProduct.setBounds(6, 171, 174, 32);
+		txtrProduct.setText(" Product: " + ProductLists.listOfElectronicProducts.get(i).myType);
+		txtrProduct.setBounds(28, 181, 132, 32);
 		getContentPane().add(txtrProduct);
 		txtrProduct.setOpaque(true);
 		txtrProduct.setBackground(new Color(34, 139, 34));
 		
 		JLabel txtrPrice = new JLabel();
 		txtrPrice.setForeground(new Color(255, 255, 255));
-		txtrPrice.setText("Price: $" + ProductLists.listOfToyProducts.get(i).myPrice);
+		txtrPrice.setText("Price: $" + ProductLists.listOfElectronicProducts.get(i).myPrice);
 		txtrPrice.setBounds(193, 35, 132, 32);
 		getContentPane().add(txtrPrice);
 		txtrPrice.setOpaque(true);
@@ -71,26 +67,27 @@ public class Toys_UI extends Product_UI{
 		
 		JLabel txtrAttribute = new JLabel();
 		txtrAttribute.setForeground(new Color(255, 255, 255));
-		txtrAttribute.setText("Brand: " + ProductLists.listOfToyProducts.get(i).myBrand);
+		txtrAttribute.setText("Brand: " + ProductLists.listOfElectronicProducts.get(i).myBrand);
 		txtrAttribute.setBounds(193, 66, 132, 32);
 		getContentPane().add(txtrAttribute);
 		txtrAttribute.setOpaque(true);
 		txtrAttribute.setBackground(new Color(34, 139, 34));
-
-		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + ProductLists.listOfToyProducts.get(i).myQuantity);
+		
+		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + ProductLists.listOfElectronicProducts.get(i).myQuantity);
 		lblRemainingStock.setForeground(new Color(255, 255, 255));
 		lblRemainingStock.setOpaque(true);
 		lblRemainingStock.setBounds(193, 96, 212, 28);
 		getContentPane().add(lblRemainingStock);
 		lblRemainingStock.setOpaque(true);
 		lblRemainingStock.setBackground(new Color(34, 139, 34));
+
 		
 		String[] quantity = {"1","2","3","4","5"};
 		JComboBox quantityList = new JComboBox(quantity);
-		quantityList.setForeground(new Color(0, 0, 0));
-		quantityList.setBounds(195, 140, 73, 44);
+		quantityList.setBounds(193, 143, 73, 44);
 		getContentPane().add(quantityList);
 		JLabel lblNewLabel = new JLabel("Quantity");
+		lblNewLabel.setBounds(203, 130, 166, 16);
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(203, 130, 54, 16);
 		getContentPane().add(lblNewLabel);
@@ -100,14 +97,14 @@ public class Toys_UI extends Product_UI{
 		JButton btnAddCart = new JButton("Add to Cart");
 		btnAddCart.setOpaque(true);
 		btnAddCart.setBackground(new Color(218, 165, 32));
-		btnAddCart.setBounds(195, 199, 217, 45);
+		btnAddCart.setBounds(193, 195, 217, 45);
 		getContentPane().add(btnAddCart);
 		btnAddCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String text = (String)quantityList.getSelectedItem();
 				int quant = Integer.parseInt(text);
-				ProductLists.listOfToyProducts.get(i).myQuantity = ProductLists.listOfToyProducts.get(i).myQuantity - quant;
-				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfToyProducts.get(i).myQuantity);
+				int stock = ProductLists.listOfElectronicProducts.get(i).myQuantity - quant;
+				lblRemainingStock.setText("Remaining Stock: " + stock);
 			}
 		});
 		
@@ -116,14 +113,14 @@ public class Toys_UI extends Product_UI{
 			public void actionPerformed(ActionEvent e) {
 				i = (i+1)%3;
 				System.out.println(i);
-				txtrProduct.setText("Product: " + ProductLists.listOfToyProducts.get(i).myType);
-				txtrPrice.setText("Price: $" + ProductLists.listOfToyProducts.get(i).myPrice);
-				txtrAttribute.setText("Color: " + ProductLists.listOfToyProducts.get(i).myBrand);
-				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfToyProducts.get(i).myQuantity);
-				lblImage.setIcon(new ImageIcon(ProductLists.listOfToyProducts.get(i).myImage));
+				txtrProduct.setText("Product: " + ProductLists.listOfElectronicProducts.get(i).myType);
+				txtrPrice.setText("Price: $" + ProductLists.listOfElectronicProducts.get(i).myPrice);
+				txtrAttribute.setText("Brand: " + ProductLists.listOfElectronicProducts.get(i).myBrand);
+				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfElectronicProducts.get(i).myQuantity);
+				lblImage.setIcon(new ImageIcon(ProductLists.listOfElectronicProducts.get(i).myImage));
 			}
 		});
-		btnNext.setBounds(335, 35, 105, 23);
+		btnNext.setBounds(335, 31, 105, 23);
 		getContentPane().add(btnNext);
 	
 		
@@ -132,15 +129,21 @@ public class Toys_UI extends Product_UI{
 			public void actionPerformed(ActionEvent e) {
 				i = (i+2)%3;
 				System.out.println(i);
-				txtrProduct.setText("Product: " + ProductLists.listOfToyProducts.get(i).myType);
-				txtrPrice.setText("Price: $" + ProductLists.listOfToyProducts.get(i).myPrice);
-				txtrAttribute.setText("Color: " + ProductLists.listOfToyProducts.get(i).myBrand);
-				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfToyProducts.get(i).myQuantity);
-				lblImage.setIcon(new ImageIcon(ProductLists.listOfToyProducts.get(i).myImage));
+				txtrProduct.setText("Product: " + ProductLists.listOfElectronicProducts.get(i).myType);
+				txtrPrice.setText("Price: $" + ProductLists.listOfElectronicProducts.get(i).myPrice);
+				txtrAttribute.setText("Brand: " + ProductLists.listOfElectronicProducts.get(i).myBrand);
+				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfElectronicProducts.get(i).myQuantity);
+				lblImage.setIcon(new ImageIcon(ProductLists.listOfElectronicProducts.get(i).myImage));
+				
 			}
+			
 		});
-		btnPrevious.setBounds(335, 66, 105, 23);
+		btnPrevious.setBounds(335, 57, 105, 23);
 		getContentPane().add(btnPrevious);
 		
 	}
 }
+			
+	
+
+	

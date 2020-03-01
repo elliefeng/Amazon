@@ -1,3 +1,4 @@
+package View;
 
 
 
@@ -11,6 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import Control.ProductLists;
 
 public class Home_UI extends Product_UI{
 

@@ -1,21 +1,19 @@
+package Model;
+
 public class Electronics extends Product
 {
 	
-	double myPrice;
-	String myBrand;
-	String myModel;
-	String myType;
-	String myImage;
-	int myQuantity;
+	public String myBrand;
 	int commit;
 	
 	public Electronics(double price, String brand, String type, int quantity, String image)
 	{
-		myPrice = price;
+		super.product_type = PRODUCT_TYPE.ELECTRONICS;
+		super.myPrice = price;
 		myBrand = brand;
-		myType = type;	
-		myQuantity = quantity;
-		myImage = image;
+		super.myType = type;
+		super.myQuantity = quantity;
+		super.myImage = image;
 	}
 	
 	public double getPrice()
@@ -36,6 +34,10 @@ public class Electronics extends Product
 	public String getType()
 	{
 		return myType;
+	}
+	
+	public String toString() {
+		return (myType + ", " + myBrand + ": " + "$" + myPrice);
 	}
 
 	

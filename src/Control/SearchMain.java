@@ -1,6 +1,14 @@
+package Control;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import View.Clothing_UI;
+import View.Electronics_UI;
+import View.Home_UI;
+import View.Search_UI;
+import View.Toys_UI;
+
 import javax.swing.JFrame;
 
 

@@ -56,7 +56,7 @@ public class Home_UI extends Product_UI{
 		
 		JLabel txtrProduct = new JLabel();
 		txtrProduct.setForeground(new Color(255, 255, 255));
-		txtrProduct.setText(" Product: <dynamic>");
+		txtrProduct.setText(" Product: " + ProductLists.listOfHomeProducts.get(i).myType);
 		txtrProduct.setBounds(28, 181, 132, 32);
 		getContentPane().add(txtrProduct);
 		txtrProduct.setOpaque(true);
@@ -77,14 +77,6 @@ public class Home_UI extends Product_UI{
 		getContentPane().add(txtrAttribute);
 		txtrAttribute.setOpaque(true);
 		txtrAttribute.setBackground(new Color(34, 139, 34));
-		
-
-		/*JButton btnAddCart = new JButton("Add to Cart");
-		btnAddCart.setForeground(new Color(0, 0, 0));
-		btnAddCart.setOpaque(true);
-		btnAddCart.setBackground(new Color(218, 165, 32));
-		btnAddCart.setBounds(193, 206, 217, 45);
-		getContentPane().add(btnAddCart);*/
 
 		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + ProductLists.listOfHomeProducts.get(i).myQuantity);
 		lblRemainingStock.setForeground(new Color(255, 255, 255));
@@ -93,7 +85,6 @@ public class Home_UI extends Product_UI{
 		getContentPane().add(lblRemainingStock);
 		lblRemainingStock.setOpaque(true);
 		lblRemainingStock.setBackground(new Color(34, 139, 34));
-
 		
 		String[] quantity = {"1","2","3","4","5"};
 		JComboBox quantityList = new JComboBox(quantity);
@@ -115,15 +106,15 @@ public class Home_UI extends Product_UI{
 			public void actionPerformed(ActionEvent e) {
 				String text = (String)quantityList.getSelectedItem();
 				int quant = Integer.parseInt(text);
-				int stock = ProductLists.listOfHomeProducts.get(i).myQuantity - quant;
-				lblRemainingStock.setText("Remaining Stock: " + stock);
+				ProductLists.listOfHomeProducts.get(i).myQuantity = ProductLists.listOfHomeProducts.get(i).myQuantity - quant;
+				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfHomeProducts.get(i).myQuantity);
 			}
 		});
 		
 		JButton btnNext = new JButton("Next");
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				i = (i+1)%3;
+				i = (i+1)%2;
 				System.out.println(i);
 				txtrProduct.setText("Product: " + ProductLists.listOfHomeProducts.get(i).myType);
 				txtrPrice.setText("Price: $" + ProductLists.listOfHomeProducts.get(i).myPrice);
@@ -139,7 +130,7 @@ public class Home_UI extends Product_UI{
 		JButton btnPrevious = new JButton("Previous");
 		btnPrevious.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				i = (i+2)%3;
+				i = (i+1)%2;
 				System.out.println(i);
 				txtrProduct.setText("Product: " + ProductLists.listOfHomeProducts.get(i).myType);
 				txtrPrice.setText("Price: $" + ProductLists.listOfHomeProducts.get(i).myPrice);

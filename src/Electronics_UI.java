@@ -48,7 +48,7 @@ public class Electronics_UI extends Product_UI{
 		
 		JLabel txtrProduct = new JLabel();
 		txtrProduct.setForeground(new Color(255, 255, 255));
-		txtrProduct.setText(" Product: <dynamic>");
+		txtrProduct.setText(" Product: " + ProductLists.listOfElectronicProducts.get(i).myType);
 		txtrProduct.setBounds(28, 181, 132, 32);
 		getContentPane().add(txtrProduct);
 		txtrProduct.setOpaque(true);
@@ -70,14 +70,6 @@ public class Electronics_UI extends Product_UI{
 		txtrAttribute.setOpaque(true);
 		txtrAttribute.setBackground(new Color(34, 139, 34));
 		
-
-		/*JButton btnAddCart = new JButton("Add to Cart");
-		btnAddCart.setForeground(new Color(0, 0, 0));
-		btnAddCart.setOpaque(true);
-		btnAddCart.setBackground(new Color(218, 165, 32));
-		btnAddCart.setBounds(193, 203, 217, 45);
-		getContentPane().add(btnAddCart);*/
-
 		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + ProductLists.listOfElectronicProducts.get(i).myQuantity);
 		lblRemainingStock.setForeground(new Color(255, 255, 255));
 		lblRemainingStock.setOpaque(true);
@@ -92,12 +84,9 @@ public class Electronics_UI extends Product_UI{
 		quantityList.setBounds(193, 143, 73, 44);
 		getContentPane().add(quantityList);
 		JLabel lblNewLabel = new JLabel("Quantity");
-
 		lblNewLabel.setBounds(203, 130, 166, 16);
-
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(203, 130, 54, 16);
-
 		getContentPane().add(lblNewLabel);
 		lblNewLabel.setOpaque(true);
 		lblNewLabel.setBackground(new Color(34, 139, 34));

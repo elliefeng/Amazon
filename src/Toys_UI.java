@@ -55,7 +55,7 @@ public class Toys_UI extends Product_UI{
 		
 		JLabel txtrProduct = new JLabel();
 		txtrProduct.setForeground(new Color(255, 255, 255));
-		txtrProduct.setText(" Product: <dynamic>");
+		txtrProduct.setText(" Product: " + ProductLists.listOfToyProducts.get(i).myType);
 		txtrProduct.setBounds(6, 171, 174, 32);
 		getContentPane().add(txtrProduct);
 		txtrProduct.setOpaque(true);
@@ -76,14 +76,6 @@ public class Toys_UI extends Product_UI{
 		getContentPane().add(txtrAttribute);
 		txtrAttribute.setOpaque(true);
 		txtrAttribute.setBackground(new Color(34, 139, 34));
-		
-
-		/*JButton btnAddCart = new JButton("Add to Cart");
-		btnAddCart.setForeground(new Color(0, 0, 0));
-		btnAddCart.setOpaque(true);
-		btnAddCart.setBackground(new Color(218, 165, 32));
-		btnAddCart.setBounds(195, 200, 217, 45);
-		getContentPane().add(btnAddCart);*/
 
 		JLabel lblRemainingStock = new JLabel("Remaining Stock: " + ProductLists.listOfToyProducts.get(i).myQuantity);
 		lblRemainingStock.setForeground(new Color(255, 255, 255));
@@ -92,11 +84,10 @@ public class Toys_UI extends Product_UI{
 		getContentPane().add(lblRemainingStock);
 		lblRemainingStock.setOpaque(true);
 		lblRemainingStock.setBackground(new Color(34, 139, 34));
-
 		
 		String[] quantity = {"1","2","3","4","5"};
 		JComboBox quantityList = new JComboBox(quantity);
-		quantityList.setForeground(new Color(255, 255, 255));
+		quantityList.setForeground(new Color(0, 0, 0));
 		quantityList.setBounds(195, 140, 73, 44);
 		getContentPane().add(quantityList);
 		JLabel lblNewLabel = new JLabel("Quantity");
@@ -115,8 +106,8 @@ public class Toys_UI extends Product_UI{
 			public void actionPerformed(ActionEvent e) {
 				String text = (String)quantityList.getSelectedItem();
 				int quant = Integer.parseInt(text);
-				int stock = ProductLists.listOfToyProducts.get(i).myQuantity - quant;
-				lblRemainingStock.setText("Remaining Stock: " + stock);
+				ProductLists.listOfToyProducts.get(i).myQuantity = ProductLists.listOfToyProducts.get(i).myQuantity - quant;
+				lblRemainingStock.setText("Remaining Stock: " + ProductLists.listOfToyProducts.get(i).myQuantity);
 			}
 		});
 		

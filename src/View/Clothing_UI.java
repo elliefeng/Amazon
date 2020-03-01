@@ -18,8 +18,8 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
+//import javax.swing.JTextArea;
+//import javax.swing.JTextField;
 
 import Control.ProductList;
 import Model.Clothing;

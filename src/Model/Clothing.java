@@ -21,11 +21,14 @@ public class Clothing extends Product {
 		String[] size = {"S","M","L","XL"};
 		return size;
 	}
-	public String getColor() {
-		return myColor;
-	}
+	
 	public String toString() {
-		return (myType + ", " + myColor + ": " + "$" + myPrice);
+		return (product_type + ". " +myType + ", " + myColor + ": " + "$" + myPrice);
+	}
+
+	@Override
+	public String toStringCustom() {
+		return "Color: " + myColor;
 	}
 	
 }

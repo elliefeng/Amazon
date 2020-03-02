@@ -13,6 +13,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 import Control.ProductList;
+import Model.Product.PRODUCT_TYPE;
 
 import java.awt.BorderLayout;
 
@@ -39,7 +40,7 @@ public class Amazon_UI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Amazon_UI frame = new Amazon_UI();
+					Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ALL,"");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -70,28 +71,25 @@ public class Amazon_UI extends JFrame {
 		mnClothing.add(mntmShirt);
 		mntmShirt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Clothing_UI frame = new Clothing_UI(0);
-		        frame.lblImage.setIcon(new ImageIcon("src/nike.jpg")); 
+				Generic_UI frame = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Shirt");
 		        frame.setVisible(true); 
 			}
 		});
 		
-		JMenuItem mntmPant = new JMenuItem("Pant");
+		JMenuItem mntmPant = new JMenuItem("Pants");
 		mnClothing.add(mntmPant);
 		mntmPant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Clothing_UI frame = new Clothing_UI(2);
-		        frame.lblImage.setIcon(new ImageIcon("src/pants.jpg")); 
+				Generic_UI frame = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Pants");
 		        frame.setVisible(true); 
 			}
 		});
 		
-		JMenuItem mntmShoe = new JMenuItem("Shoe");
+		JMenuItem mntmShoe = new JMenuItem("Shoes");
 		mnClothing.add(mntmShoe);
 		mntmShoe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Clothing_UI frame = new Clothing_UI(1);
-		        frame.lblImage.setIcon(new ImageIcon("src/shoes.jpg")); 
+				Generic_UI frame = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Shoes");
 		        frame.setVisible(true); 
 			}
 		});
@@ -104,7 +102,7 @@ public class Amazon_UI extends JFrame {
 		mnToys.add(mntmChicken);
 		mntmChicken.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Toys_UI frame = new Toys_UI(/*"Rubber Chicken", 10.99, "50+"*/0);
+				Generic_UI frame = new Generic_UI(PRODUCT_TYPE.TOYS, "Rubber Chicken");
 				frame.setVisible(true);
 			}
 		});
@@ -113,7 +111,7 @@ public class Amazon_UI extends JFrame {
 		mnToys.add(mntmLegos);
 		mntmLegos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Toys_UI frame = new Toys_UI(/*"Legos", 15.99, "8-11"*/2);
+				Generic_UI frame = new Generic_UI(PRODUCT_TYPE.TOYS, "Lego");
 				frame.setVisible(true);
 			}
 		});
@@ -122,7 +120,7 @@ public class Amazon_UI extends JFrame {
 		mnToys.add(mntmStuffedAnimals);
 		mntmStuffedAnimals.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Toys_UI frame = new Toys_UI(/*"Stuffed animals", 8.99, "5-10"*/1);
+				Generic_UI frame = new Generic_UI(PRODUCT_TYPE.TOYS, "Stuffed Animal");
 				frame.setVisible(true);
 			}
 		});
@@ -136,8 +134,7 @@ public class Amazon_UI extends JFrame {
 		mntmPhone.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//new Electronics_UI(0).setVisible(true);
-				Electronics_UI frame = new Electronics_UI(/*"iPhone", 500.01, "Apple"*/0);
-				frame.lblImage.setIcon(new ImageIcon("src/nokia.jpg")); 
+				Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "Phone");
 				frame.setVisible(true);
 			}
 		});
@@ -146,8 +143,7 @@ public class Amazon_UI extends JFrame {
 		mnElectronics.add(mntmComputer);
 		mntmComputer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Electronics_UI frame = new Electronics_UI(/*"Computer", 600.01, "Microsoft"*/1);
-				frame.lblImage.setIcon(new ImageIcon("src/computer.jpg")); 
+				Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "Computer");
 				frame.setVisible(true);
 			}
 		});
@@ -156,8 +152,7 @@ public class Amazon_UI extends JFrame {
 		mnElectronics.add(mntmTV);
 		mntmTV.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Electronics_UI frame = new Electronics_UI(/*"TV", 800.01, "Sony"*/2);
-				frame.lblImage.setIcon(new ImageIcon("src/tv.jpg")); 
+				Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "TV");
 				frame.setVisible(true);
 			}
 		});
@@ -170,7 +165,7 @@ public class Amazon_UI extends JFrame {
 		mnHome.add(mntmFurniture);
 		mntmFurniture.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Home_UI frame = new Home_UI(/*"Coach",350.01, "15 ft x 5 ft"*/1);
+				Generic_UI frame = new Generic_UI(PRODUCT_TYPE.HOME, "Couch");
 				frame.setVisible(true);
 			}
 		});
@@ -179,7 +174,7 @@ public class Amazon_UI extends JFrame {
 		mnHome.add(mntmDecor);
 		mntmDecor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Home_UI frame = new Home_UI(/*"Table", 100.00, "10 ft x 15 ft"*/0);
+				Generic_UI frame = new Generic_UI(PRODUCT_TYPE.HOME, "Table");
 				frame.setVisible(true);
 			}
 		});
@@ -216,7 +211,6 @@ public class Amazon_UI extends JFrame {
 		//lblAmazon.setBounds(6, 6, 617, 377);
 		getContentPane().add(lblAmazon); 
 		lblAmazon.setIcon(new ImageIcon("src/ellie.jpg"));
-		
 		
 	}
 	

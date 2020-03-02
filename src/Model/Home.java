@@ -20,7 +20,12 @@ public class Home extends Product{
 	}
 	
 	public String toString() {
-		return (myType + ", " + myMaterial + ": " + "$" + myPrice);
+		return (product_type + ". " + myType + ", " + myMaterial + ": " + "$" + myPrice);
+	}
+
+	@Override
+	public String toStringCustom() {
+		return "Material: " + myMaterial;
 	}
 	
 }

@@ -15,15 +15,14 @@ public class Toys extends Product {
 		
 	}
 	
-	public String getBrand() {
-		return myBrand;
-	}
-	
-	public String getModel() {
-		return myModel;
-	}
 	public String toString() {
-		return (myType + ", " + myBrand + ": " + "$" + myPrice);
+		return (product_type + ". " + myType + ", " + myBrand + ": " + "$" + myPrice);
+	}
+
+	@Override
+	public String toStringCustom() {
+		// TODO Auto-generated method stub
+		return "Toys: " + myBrand;
 	}
 		
 }

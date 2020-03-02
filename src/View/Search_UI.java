@@ -9,13 +9,17 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import Control.SearchMain;
-
+import Model.Product.PRODUCT_TYPE;
 import javax.swing.JLabel;
 
 public class Search_UI extends Amazon_UI {
 	
-	private JPanel contentPane;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	//private JPanel contentPane;
+	
 	public static String search;
 	public static JLabel errorMessage = new JLabel("");
 	
@@ -49,7 +53,7 @@ public class Search_UI extends Amazon_UI {
 	JTextArea txtrClothingShirtPant = new JTextArea();
 	txtrClothingShirtPant.setForeground(new Color(255, 255, 255));
 	txtrClothingShirtPant.setFont(new Font("YuGothic", Font.PLAIN, 20));
-	txtrClothingShirtPant.setText("Clothing:\nShirt\nPant\nShoe");
+	txtrClothingShirtPant.setText("CLOTHING:\nShirt\nPant\nShoe");
 	txtrClothingShirtPant.setBounds(68, 69, 155, 124);
 	getContentPane().add(txtrClothingShirtPant);
 	txtrClothingShirtPant.setBackground(new Color(34, 139, 34));
@@ -57,7 +61,7 @@ public class Search_UI extends Amazon_UI {
 	JTextArea txtrToysLegoRubber = new JTextArea();
 	txtrToysLegoRubber.setForeground(new Color(255, 255, 255));
 	txtrToysLegoRubber.setFont(new Font("YuGothic", Font.PLAIN, 20));
-	txtrToysLegoRubber.setText("Toys:\nLego\nRubber Chicken\nStuffed Animal");
+	txtrToysLegoRubber.setText("TOYS:\nLego\nRubber Chicken\nStuffed Animal");
 	txtrToysLegoRubber.setBounds(68, 205, 155, 124);
 	getContentPane().add(txtrToysLegoRubber);
 	txtrToysLegoRubber.setBackground(new Color(34, 139, 34));
@@ -65,7 +69,7 @@ public class Search_UI extends Amazon_UI {
 	JTextArea txtrElectronics = new JTextArea();
 	txtrElectronics.setForeground(new Color(255, 255, 255));
 	txtrElectronics.setFont(new Font("YuGothic", Font.PLAIN, 20));
-	txtrElectronics.setText("Electronics:\nPhone\nComputer\nTelevision");
+	txtrElectronics.setText("ELECTRONICS:\nPhone\nComputer\nTelevision");
 	txtrElectronics.setBounds(260, 69, 124, 124);
 	getContentPane().add(txtrElectronics);
 	txtrElectronics.setBackground(new Color(34, 139, 34));
@@ -73,7 +77,7 @@ public class Search_UI extends Amazon_UI {
 	JTextArea txtrHome = new JTextArea();
 	txtrHome.setForeground(new Color(255, 255, 255));
 	txtrHome.setFont(new Font("YuGothic", Font.PLAIN, 20));
-	txtrHome.setText("Home:\nCouch\nTable");
+	txtrHome.setText("HOME:\nCouch\nTable");
 	txtrHome.setBounds(260, 205, 124, 119);
 	getContentPane().add(txtrHome);
 	txtrHome.setBackground(new Color(34, 139, 34));
@@ -86,7 +90,8 @@ public class Search_UI extends Amazon_UI {
 	btnSearch.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			search = txtSearchForA.getText();
-			SearchMain.main();
+			Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ALL, search);
+	        frame.setVisible(true); 
 		}
 	});
 	errorMessage.setForeground(Color.RED);
@@ -96,7 +101,5 @@ public class Search_UI extends Amazon_UI {
 	getContentPane().add(errorMessage);
 	errorMessage.setText("");
 	
-
-
 	}
 }

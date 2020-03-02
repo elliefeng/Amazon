@@ -36,7 +36,7 @@ public class Generic_UI extends Amazon_UI {
 	private Product item;
 
 	// Definitions to support Labels
-	private JLabel lblImage;	
+	public JLabel lblImage;	
 	private JLabel txtrProduct;
 	private JLabel txtrPrice;
 	private JLabel txtrAttribute;

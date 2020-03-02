@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import Control.SearchMain;
 import Model.Product.PRODUCT_TYPE;
 import javax.swing.JLabel;
 
@@ -90,8 +91,10 @@ public class Search_UI extends Amazon_UI {
 	btnSearch.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			search = txtSearchForA.getText();
+			SearchMain.main();
 			Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ALL, search);
-	        frame.setVisible(true); 
+	        
+			frame.setVisible(true); 
 		}
 	});
 	errorMessage.setForeground(Color.RED);

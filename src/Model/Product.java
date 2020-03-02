@@ -2,12 +2,15 @@ package Model;
 public abstract class Product {
 	
 	public static enum PRODUCT_TYPE {ALL, CLOTHING, ELECTRONICS, HOME, TOYS};
-	public PRODUCT_TYPE product_type;
+	protected PRODUCT_TYPE product_type;
 	public String myType;
-	public double myPrice;
-	public int myQuantity;
+	protected double myPrice;
+	protected int myQuantity;
 	public String myImage;
 	
+	public PRODUCT_TYPE getProductType() {
+		return product_type;
+	}
 	public double getPrice() {
 		return myPrice;
 	}
@@ -39,5 +42,6 @@ public abstract class Product {
 	
 	public static void addToCart(double price) {		
 	}
+	
 	
 }

@@ -34,7 +34,15 @@ public class Generic_UI extends Amazon_UI {
 	ArrayList<Object> list;
 	Product item;
 
-	public static JLabel lblImage = new JLabel("");	
+	private JLabel lblImage;	
+	private JLabel txtrProduct;
+	private JLabel txtrPrice;
+	private JLabel txtrAttribute;
+	private JLabel lblRemainingStock;
+	private JLabel lblNewLabel_1;
+	private String[] size = {"S","M","L","XL"};
+	private JComboBox<?> sizeList1;
+	
 	private static final long serialVersionUID = 1048257216723871342L;
 	
 	
@@ -62,36 +70,37 @@ public class Generic_UI extends Amazon_UI {
 		setBounds(100, 100, 480, 360);
 		getContentPane().setLayout(null);
 		
-		JLabel lblImage = new JLabel("");
-	    lblImage.setIcon(new ImageIcon(item.myImage));
+		// Icon
+		lblImage = new JLabel("");
 		lblImage.setBounds(28, 35, 96, 96);
 		getContentPane().add(lblImage);
 		
-		JLabel txtrProduct = new JLabel();
+		// Product
+		txtrProduct = new JLabel();
 		txtrProduct.setForeground(new Color(255, 255, 255));
-		txtrProduct.setText(item.toStringProduct());
 		txtrProduct.setBounds(28, 181, 132, 32);
 		getContentPane().add(txtrProduct);
 		txtrProduct.setOpaque(true);
 		txtrProduct.setBackground(new Color(34, 139, 34));
 		
-		JLabel txtrPrice = new JLabel();
+		// Price
+		txtrPrice = new JLabel();
 		txtrPrice.setForeground(new Color(255, 255, 255));
-		txtrPrice.setText(item.toStringPrice());
 		txtrPrice.setBounds(193, 35, 132, 32);
 		getContentPane().add(txtrPrice);
 		txtrPrice.setOpaque(true);
 		txtrPrice.setBackground(new Color(34, 139, 34));
 		
-		JLabel txtrAttribute = new JLabel();
+		// Custom/Attribute
+		txtrAttribute = new JLabel();
 		txtrAttribute.setForeground(new Color(255, 255, 255));
-		txtrAttribute.setText(item.toStringCustom());
 		txtrAttribute.setBounds(193, 66, 132, 32);
 		getContentPane().add(txtrAttribute);
 		txtrAttribute.setOpaque(true);
 		txtrAttribute.setBackground(new Color(34, 139, 34));
 
-		JLabel lblRemainingStock = new JLabel(item.toStringQuantity());
+		// Stock
+		lblRemainingStock = new JLabel("");
 		lblRemainingStock.setForeground(new Color(255, 255, 255));
 		lblRemainingStock.setOpaque(true);
 		lblRemainingStock.setBounds(193, 96, 212, 28);
@@ -99,9 +108,9 @@ public class Generic_UI extends Amazon_UI {
 		lblRemainingStock.setOpaque(true);
 		lblRemainingStock.setBackground(new Color(34, 139, 34));
 
-		
+		// Order quantity
 		String[] quantity = {"1","2","3","4","5"};
-		JComboBox quantityList = new JComboBox(quantity);
+		JComboBox<?> quantityList = new JComboBox<Object>(quantity);
 		quantityList.setForeground(new Color(0, 0, 0));
 		quantityList.setBounds(195, 143, 73, 44);
 		getContentPane().add(quantityList);
@@ -126,20 +135,18 @@ public class Generic_UI extends Amazon_UI {
 			}
 		});
 		
-		String[] size = {"S","M","L","XL"};
-		JComboBox sizeList1 = new JComboBox(size);
+		// Size = {"S","M","L","XL"};
+		sizeList1 = new JComboBox<Object>(size);
 		sizeList1.setBackground(new Color(34, 139, 34));
 		sizeList1.setBounds(321, 143, 73, 44);
 		getContentPane().add(sizeList1);
-		
-		JLabel lblNewLabel_1 = new JLabel("Size");
+		lblNewLabel_1 = new JLabel("Size");
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
 		lblNewLabel_1.setBounds(343, 130, 25, 16);
 		getContentPane().add(lblNewLabel_1);
 		lblNewLabel_1.setOpaque(true);
 		lblNewLabel_1.setBackground(new Color(34, 139, 34));
-
 		
 		JButton btnNext = new JButton("Next");
 		btnNext.addActionListener(new ActionListener() {
@@ -147,12 +154,7 @@ public class Generic_UI extends Amazon_UI {
 				i = (i+1)%list.size();
 				System.out.println(i);
 				item = (Product) list.get(i);
-
-				txtrProduct.setText(item.toStringProduct());
-				txtrPrice.setText(item.toStringPrice());
-				txtrAttribute.setText(item.toStringCustom());
-				lblRemainingStock.setText("Remaining Stock: " + item.myQuantity);
-				lblImage.setIcon(new ImageIcon(item.myImage));
+				setText();
 			}
 		});
 		btnNext.setBounds(338, 40, 105, 23);
@@ -165,20 +167,43 @@ public class Generic_UI extends Amazon_UI {
 				i = i > 0 ? (i-1) : (list.size()-1);
 				System.out.println(i);
 				item = (Product) list.get(i);
-
-				txtrProduct.setText(item.toStringProduct());
-				txtrPrice.setText(item.toStringPrice());
-				txtrAttribute.setText(item.toStringCustom());
-				lblRemainingStock.setText("Remaining Stock: " + item.myQuantity);
-				lblImage.setIcon(new ImageIcon(item.myImage));
+				setText();
 			}
 		});
+		
+		// set text for buttons
+		setText();
+		
 		btnPrevious.setBounds(339, 71, 104, 23);
 		getContentPane().add(btnPrevious);	
 		
 		
 	}
 	
+	/* 
+	 * One place for setting text
+	 */
+	private void setText() {
+		// set text for buttons
+		txtrProduct.setText(item.toStringProduct());
+		txtrPrice.setText(item.toStringPrice());
+		txtrAttribute.setText(item.toStringCustom());
+		lblRemainingStock.setText(item.toStringQuantity());
+		lblImage.setIcon(new ImageIcon(item.myImage));
+		
+		if (item.getProductType() == PRODUCT_TYPE.CLOTHING) {
+			sizeList1.setVisible(true);
+			lblNewLabel_1.setVisible(true);
+		} else {
+			sizeList1.setVisible(false);
+			lblNewLabel_1.setVisible(false);
+		}
+		
+	}
+	
+	/*
+	 * logic for selection of current item to display
+	 */
 	private void setItem(PRODUCT_TYPE pt, String filter) {
 		i = 0;
 		

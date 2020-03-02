@@ -44,7 +44,7 @@ public class ProductList {
 
 		for (Object  o : listOfProducts ) {
 			Product p = (Product) o;
-			if (p.product_type == pt) {
+			if (p.getProductType() == pt) {
 				filteredListOfProducts.add(o);
 			}
 		}

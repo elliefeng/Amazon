@@ -30,10 +30,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Generic_UI extends Amazon_UI {
-	int i;							// index for clothing items
-	ArrayList<Object> list;
-	Product item;
+	// Product List control values
+	private int index;
+	private ArrayList<Object> list;
+	private Product item;
 
+	// Definitions to support Labels
 	private JLabel lblImage;	
 	private JLabel txtrProduct;
 	private JLabel txtrPrice;
@@ -60,11 +62,11 @@ public class Generic_UI extends Amazon_UI {
 	}
 	
 	public Generic_UI(PRODUCT_TYPE pt, String filter) {
-		super();
+		//super();
 		lblAmazon.setVisible(false);
 		
 		// setup landing item based off of any filters
-		setItem(pt, filter);
+		index = setItem(pt, filter);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 480, 360);
@@ -151,9 +153,9 @@ public class Generic_UI extends Amazon_UI {
 		JButton btnNext = new JButton("Next");
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				i = (i+1)%list.size();
-				System.out.println(i);
-				item = (Product) list.get(i);
+				index = (index+1) % list.size();
+				System.out.println(index);
+				item = (Product) list.get(index);
 				setText();
 			}
 		});
@@ -164,9 +166,9 @@ public class Generic_UI extends Amazon_UI {
 		JButton btnPrevious = new JButton("Previous");
 		btnPrevious.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				i = i > 0 ? (i-1) : (list.size()-1);
-				System.out.println(i);
-				item = (Product) list.get(i);
+				index = index > 0 ? (index-1) : (list.size()-1);
+				System.out.println(index);
+				item = (Product) list.get(index);
 				setText();
 			}
 		});
@@ -204,8 +206,8 @@ public class Generic_UI extends Amazon_UI {
 	/*
 	 * logic for selection of current item to display
 	 */
-	private void setItem(PRODUCT_TYPE pt, String filter) {
-		i = 0;
+	private int setItem(PRODUCT_TYPE pt, String filter) {
+		int i = 0;
 		
 		if (pt == PRODUCT_TYPE.ALL) {
 			list = super.products.FilteredList(pt, filter);
@@ -220,7 +222,7 @@ public class Generic_UI extends Amazon_UI {
 				i++;
 			}
 		}
-		
+		return i;
 	}
 
 	

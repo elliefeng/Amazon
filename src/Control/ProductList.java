@@ -14,6 +14,9 @@ public class ProductList {
 
 	public ArrayList<Object> listOfProducts = new ArrayList<Object>();
 	
+	/*
+	 * Initialization of Product using Product Model
+	 */
 	public ProductList() {
 		Product shirt = new Clothing(19.99,"Teal","Shirt",100,"src/nike.jpg");
 		Product shoes = new Clothing(30.99,"Black","Shoes",50,"src/shoes.jpg");
@@ -39,6 +42,12 @@ public class ProductList {
 		listOfProducts.add(lego);
 	}
 	
+	/*
+	 * Used to reduce Product list based off of Product type
+	 * 
+	 * @parameter is type like Electronic, Home, Toys...
+	 * @return is a filtered list of ProductList object
+	 */
 	public ArrayList<Object> FilteredProductList(PRODUCT_TYPE pt) {
 		ArrayList<Object> filteredListOfProducts = new ArrayList<Object>();
 
@@ -51,6 +60,12 @@ public class ProductList {
 		return filteredListOfProducts;
 	}
 	
+	/*
+	 * Used to reduce Product list based off of string filter, filters against toString
+	 * 
+	 * @parameter is any string
+	 * @return is a filtered list of ProductList object
+	 */
 	public ArrayList<Object> FilteredProductList(String filter) {
 		ArrayList<Object> filteredListOfProducts = new ArrayList<Object>();
 
@@ -64,6 +79,12 @@ public class ProductList {
 		return filteredListOfProducts;
 	}
 	
+	/*
+	 * Two filters, combination of above
+	 * 
+	 * @parameter is Product Type plus a filtering string
+	 * @return is a filtered list of ProductList object
+	 */
 	public ArrayList<Object> FilteredList(PRODUCT_TYPE pt, String filter)
 	{
 		ArrayList<Object> filteredListOfProducts = new ArrayList<Object>();

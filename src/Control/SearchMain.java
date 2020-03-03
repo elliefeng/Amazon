@@ -43,16 +43,19 @@ public class SearchMain
     	  //TOYS
     	  case "lego":
     		  Generic_UI frame6 = new Generic_UI(PRODUCT_TYPE.TOYS, "lego");
-			  frame6.setVisible(true);  
+    		  frame6.lblImage.setIcon(new ImageIcon("src/lego.jpg")); 
+    		  frame6.setVisible(true);  
     		  break;
     	  case "stuffed animal":
     		  Generic_UI frame7 = new Generic_UI(PRODUCT_TYPE.TOYS, "stuffed animal");
-  			  frame7.setVisible(true); 
-  			break;
+    		  frame7.lblImage.setIcon(new ImageIcon("src/stuffedanimal.jpg")); 
+    		  frame7.setVisible(true); 
+  			  break;
     	  case "rubber chicken":
     		  Generic_UI frame8 = new Generic_UI(PRODUCT_TYPE.TOYS, "rubber chicken");
-  			  frame8.setVisible(true);  
-  			break;
+    		  frame8.lblImage.setIcon(new ImageIcon("src/rubberchicken.jpg")); 
+    		  frame8.setVisible(true);  
+  			  break;
   			
   		  //ELECTRONICS
     	  case "phone":
@@ -68,7 +71,7 @@ public class SearchMain
     		  Generic_UI frame10 = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "computer");
 			  frame10.lblImage.setIcon(new ImageIcon("src/computer.jpg")); 
 			  frame10.setVisible(true);
-  			break;
+  			  break;
     	  case "TV":
     		  /*Electronics_UI frame11 = new Electronics_UI("TV", 800.00, "Sony");
   			  frame11.setVisible(true); */
@@ -80,11 +83,13 @@ public class SearchMain
     	  //HOME
     	  case "couch":
     		  Generic_UI frame12 = new Generic_UI(PRODUCT_TYPE.HOME, "couch");
-			  frame12.setVisible(true);  
+    		  frame12.lblImage.setIcon(new ImageIcon("src/couch.jpg")); 
+    		  frame12.setVisible(true);  
     		  break;
     	  case "table":
-    		  Generic_UI frame13 = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "table");
-  			  frame13.setVisible(true); 
+    		  Generic_UI frame13 = new Generic_UI(PRODUCT_TYPE.HOME, "table");
+    		  frame13.lblImage.setIcon(new ImageIcon("src/table.jpg")); 
+    		  frame13.setVisible(true); 
   			break;
     	  
     	  

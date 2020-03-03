@@ -70,8 +70,8 @@ public class Search_UI extends Amazon_UI {
 	JTextArea txtrElectronics = new JTextArea();
 	txtrElectronics.setForeground(new Color(255, 255, 255));
 	txtrElectronics.setFont(new Font("YuGothic", Font.PLAIN, 20));
-	txtrElectronics.setText("ELECTRONICS:\nPhone\nComputer\nTelevision");
-	txtrElectronics.setBounds(260, 69, 124, 124);
+	txtrElectronics.setText("ELECTRONICS:\r\nPhone\r\nComputer\r\nTV");
+	txtrElectronics.setBounds(260, 69, 155, 124);
 	getContentPane().add(txtrElectronics);
 	txtrElectronics.setBackground(new Color(34, 139, 34));
 	

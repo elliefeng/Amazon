@@ -16,6 +16,7 @@ public class SearchMain
     	//String a;
     	Search_UI P = new Search_UI();
     	P.search = P.search.replace(" ", "").toLowerCase();
+    	
     	switch(P.search) {
     	  //CLOTHING
     	  case "shirt":
@@ -46,12 +47,12 @@ public class SearchMain
     		  frame6.lblImage.setIcon(new ImageIcon("src/lego.jpg")); 
     		  frame6.setVisible(true);  
     		  break;
-    	  case "stuffed animal":
-    		  Generic_UI frame7 = new Generic_UI(PRODUCT_TYPE.TOYS, "stuffed animal");
+    	  case "stuffedanimal":
+    		  Generic_UI frame7 = new Generic_UI(PRODUCT_TYPE.TOYS, "Stuffed Animal");
     		  frame7.lblImage.setIcon(new ImageIcon("src/stuffedanimal.jpg")); 
     		  frame7.setVisible(true); 
   			  break;
-    	  case "rubber chicken":
+    	  case "rubberchicken":
     		  Generic_UI frame8 = new Generic_UI(PRODUCT_TYPE.TOYS, "rubber chicken");
     		  frame8.lblImage.setIcon(new ImageIcon("src/rubberchicken.jpg")); 
     		  frame8.setVisible(true);  
@@ -72,7 +73,7 @@ public class SearchMain
 			  frame10.lblImage.setIcon(new ImageIcon("src/computer.jpg")); 
 			  frame10.setVisible(true);
   			  break;
-    	  case "TV":
+    	  case "tv":
     		  /*Electronics_UI frame11 = new Electronics_UI("TV", 800.00, "Sony");
   			  frame11.setVisible(true); */
     		  Generic_UI frame11 = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "TV");

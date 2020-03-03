@@ -40,7 +40,8 @@ public class Amazon_UI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ALL,"");
+					Amazon_UI frame = new Amazon_UI();
+					//Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ALL,"");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -54,7 +55,7 @@ public class Amazon_UI extends JFrame {
 	 */
 	public Amazon_UI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 738, 536);
+		setBounds(100, 100, 919, 664);
 		getContentPane().setBackground(new Color(0, 0, 139));
 		setBackground(new Color(34, 139, 34));
 		//setOpacity(true);

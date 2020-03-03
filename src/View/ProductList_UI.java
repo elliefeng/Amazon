@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -46,37 +47,46 @@ public class ProductList_UI extends Amazon_UI {
 		lblNewLabel.setFont(new Font("Myanmar MN", Font.PLAIN, 25));
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(19, 17, 691, 39);
+		lblNewLabel.setBounds(108, 99, 691, 39);
 		getContentPane().add(lblNewLabel);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(40, 68, 149, 340);
+		scrollPane.setBounds(39, 181, 149, 340);
 		getContentPane().add(scrollPane);
 		
 		JScrollBar scrollBar = new JScrollBar();
 		scrollPane.setRowHeaderView(scrollBar);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(201, 68, 149, 340);
+		scrollPane_1.setBounds(248, 181, 149, 340);
 		getContentPane().add(scrollPane_1);
 		
 		JScrollBar scrollBar_1 = new JScrollBar();
 		scrollPane_1.setRowHeaderView(scrollBar_1);
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(362, 68, 149, 340);
+		scrollPane_2.setBounds(492, 181, 149, 340);
 		getContentPane().add(scrollPane_2);
 		
 		JScrollBar scrollBar_2 = new JScrollBar();
 		scrollPane_2.setRowHeaderView(scrollBar_2);
 		
 		JScrollPane scrollPane_3 = new JScrollPane();
-		scrollPane_3.setBounds(523, 68, 149, 340);
+		scrollPane_3.setBounds(729, 181, 149, 340);
 		getContentPane().add(scrollPane_3);
 		
 		JScrollBar scrollBar_3 = new JScrollBar();
 		scrollPane_3.setRowHeaderView(scrollBar_3);
+		
+		JLabel lblNewLabel_1 = new JLabel("Alibaba");
+		lblNewLabel_1.setBounds(0, 0, 935, 82);
+		getContentPane().add(lblNewLabel_1);
+		lblNewLabel_1.setIcon(new ImageIcon("src/alibaba.png"));
+		
+		
+		
 		getContentPane().remove(lblAmazon);
+		
 		
 		
 	}

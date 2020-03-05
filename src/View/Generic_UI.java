@@ -21,6 +21,7 @@ import javax.swing.JLabel;
 //import javax.swing.JTextArea;
 //import javax.swing.JTextField;
 
+import Control.Cart;
 import Control.ProductList;
 import Model.Clothing;
 import Model.Product;
@@ -136,6 +137,7 @@ public class Generic_UI extends Amazon_UI {
 				int quant = Integer.parseInt(text);
 				item.setQuantity(item.getQuantity() - quant);
 				lblRemainingStock.setText(item.toStringQuantity());
+				Cart.CartList.add(item);
 			}
 		});
 		

@@ -157,7 +157,7 @@ public class Search_UI extends Amazon_UI {
 		JButton btnComputer = new JButton("Computer");
 		btnComputer.setBounds(6, 342, 117, 29);
 		panel1.add(btnComputer);
-		btnShirt.addActionListener(new ActionListener() {
+		btnComputer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "Computer");
 			     frame.lblImage.setIcon(new ImageIcon("src/computer.jpg")); 

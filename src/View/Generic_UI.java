@@ -108,7 +108,7 @@ public class Generic_UI extends Amazon_UI {
 		lblRemainingStock = new JLabel("");
 		lblRemainingStock.setForeground(new Color(255, 255, 255));
 		lblRemainingStock.setOpaque(true);
-		lblRemainingStock.setBounds(193, 96, 212, 28);
+		lblRemainingStock.setBounds(193, 96, 132, 28);
 		getContentPane().add(lblRemainingStock);
 		lblRemainingStock.setOpaque(true);
 		lblRemainingStock.setBackground(new Color(34, 139, 34));
@@ -128,7 +128,7 @@ public class Generic_UI extends Amazon_UI {
 		
 		JButton btnAddCart = new JButton("Add to Cart");
 		btnAddCart.setOpaque(true);
-		btnAddCart.setBackground(new Color(218, 165, 32));
+		btnAddCart.setBackground(new Color(34, 139, 34));
 		btnAddCart.setBounds(193, 203, 217, 45);
 		getContentPane().add(btnAddCart);
 		btnAddCart.addActionListener(new ActionListener() {

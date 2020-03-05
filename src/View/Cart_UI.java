@@ -14,11 +14,13 @@ import java.awt.Color;
 	import javax.swing.SwingConstants;
 
 import Control.Cart;
+import Model.Product;
 
 import javax.swing.JButton;
 	import javax.swing.JComboBox;
 	import java.awt.List;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JScrollPane;
@@ -55,7 +57,12 @@ public class Cart_UI extends Amazon_UI {
 			getContentPane().add(lblCart);
 			
 			JTextPane txtpnCart = new JTextPane();
-			txtpnCart.setText(Cart.CartList.toString());
+			//txtpnCart.setText(Cart.CartList.toString());
+			ArrayList<Product> displayCart = new ArrayList<Product>();
+			for(int i=0;i<Cart.CartList.size();i++) {
+				displayCart.add(Cart.CartList.get(i));
+				txtpnCart.setText(displayCart.toString()+"\n");
+			}
 			txtpnCart.setBounds(51, 83, 596, 282);
 			getContentPane().add(txtpnCart);
 			

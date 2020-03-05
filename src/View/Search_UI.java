@@ -80,7 +80,7 @@ public class Search_UI extends Amazon_UI {
 		panel.add(btnShirt);
 		btnShirt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.CLOTHING, "shirt");
+				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Shirt");
 			     frame.lblImage.setIcon(new ImageIcon("src/nike.jpg")); 
 			     frame.setVisible(true); 
 			}
@@ -91,7 +91,7 @@ public class Search_UI extends Amazon_UI {
 		panel.add(btnPants);
 		btnPants.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.CLOTHING, "pant");
+				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Pant");
 			     frame.lblImage.setIcon(new ImageIcon("src/pants.jpg")); 
 			     frame.setVisible(true); 
 			}
@@ -102,7 +102,7 @@ public class Search_UI extends Amazon_UI {
 		panel.add(btnShoes);
 		btnShoes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.CLOTHING, "shoe");
+				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Shoe");
 			     frame.lblImage.setIcon(new ImageIcon("src/shoes.jpg")); 
 			     frame.setVisible(true); 
 			}
@@ -137,7 +137,7 @@ public class Search_UI extends Amazon_UI {
 		panel1.add(btnPhone);
 		btnPhone.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "phone");
+				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "Phone");
 			     frame.lblImage.setIcon(new ImageIcon("src/nokia.jpg")); 
 			     frame.setVisible(true); 
 			}
@@ -148,7 +148,7 @@ public class Search_UI extends Amazon_UI {
 		panel1.add(btnTv);
 		btnTv.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "TV");
+				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "Television");
 			     frame.lblImage.setIcon(new ImageIcon("src/tv.jpg")); 
 			     frame.setVisible(true); 
 			}
@@ -159,7 +159,7 @@ public class Search_UI extends Amazon_UI {
 		panel1.add(btnComputer);
 		btnShirt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "computer");
+				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "Computer");
 			     frame.lblImage.setIcon(new ImageIcon("src/computer.jpg")); 
 			     frame.setVisible(true); 
 			}
@@ -193,7 +193,7 @@ public class Search_UI extends Amazon_UI {
 		panel2.add(btnRubberChicken);
 		btnRubberChicken.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.TOYS, "rubber chicken");
+				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.TOYS, "Rubber Chicken");
 			     frame.lblImage.setIcon(new ImageIcon("src/rubberchicken.jpg")); 
 			     frame.setVisible(true); 
 			}
@@ -204,7 +204,7 @@ public class Search_UI extends Amazon_UI {
 		panel2.add(btnStuffedAnimal);
 		btnShirt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.TOYS, "stuffed animal");
+				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.TOYS, "Stuffed Animal");
 			     frame.lblImage.setIcon(new ImageIcon("src/stuffedanimal.jpg")); 
 			     frame.setVisible(true); 
 			}
@@ -215,7 +215,7 @@ public class Search_UI extends Amazon_UI {
 		panel2.add(btnLegos);
 		btnShirt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.TOYS, "lego");
+				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.TOYS, "Lego");
 			     frame.lblImage.setIcon(new ImageIcon("src/lego.jpg")); 
 			     frame.setVisible(true); 
 			}
@@ -245,7 +245,7 @@ public class Search_UI extends Amazon_UI {
 		panel3.add(btnCouch);
 		btnCouch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.HOME, "couch");
+				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.HOME, "Couch");
 			     frame.lblImage.setIcon(new ImageIcon("src/couch.jpg")); 
 			     frame.setVisible(true); 
 			}
@@ -256,7 +256,7 @@ public class Search_UI extends Amazon_UI {
 		panel3.add(btnTable);
 		btnTable.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.HOME, "table");
+				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.HOME, "Table");
 			     frame.lblImage.setIcon(new ImageIcon("src/table.jpg")); 
 			     frame.setVisible(true); 
 			}

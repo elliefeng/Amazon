@@ -12,7 +12,7 @@ import Model.Toys;
 
 public class ProductList {
 
-	public ArrayList<Object> listOfProducts = new ArrayList<Object>();
+	public ArrayList<Product> listOfProducts = new ArrayList<Product>();
 	
 	/*
 	 * Initialization of Product using Product Model
@@ -48,15 +48,20 @@ public class ProductList {
 	 * @parameter is type like Electronic, Home, Toys...
 	 * @return is a filtered list of ProductList object
 	 */
-	public ArrayList<Object> FilteredProductList(PRODUCT_TYPE pt) {
-		ArrayList<Object> filteredListOfProducts = new ArrayList<Object>();
+	public ArrayList<Product> FilteredProductList(PRODUCT_TYPE pt) {
+		ArrayList<Product> filteredListOfProducts = new ArrayList<Product>();
 
-		for (Object  o : listOfProducts ) {
+		for (int i = 0; i<11; i++) {
+			if (listOfProducts.get(i).getProductType() == pt)
+				filteredListOfProducts.add(listOfProducts.get(i));
+		}
+		
+		/*for (Product  o : listOfProducts ) {
 			Product p = (Product) o;
 			if (p.getProductType() == pt) {
 				filteredListOfProducts.add(o);
 			}
-		}
+		}*/
 		return filteredListOfProducts;
 	}
 	
@@ -66,16 +71,22 @@ public class ProductList {
 	 * @parameter is any string
 	 * @return is a filtered list of ProductList object
 	 */
-	public ArrayList<Object> FilteredProductList(String filter) {
-		ArrayList<Object> filteredListOfProducts = new ArrayList<Object>();
+	public ArrayList<Product> FilteredProductList(String filter) {
+		ArrayList<Product> filteredListOfProducts = new ArrayList<Product>();
 
-		for (Object  o : listOfProducts ) {
+		for (int i = 0; i<11; i++) {
+			if (listOfProducts.get(i).toString().contains(filter))
+				filteredListOfProducts.add(listOfProducts.get(i));
+		}
+		System.out.print(filteredListOfProducts);
+		
+		/*for (Product  o : listOfProducts) {
 			Product p = (Product) o;
 			if (p.toString().contains(filter)) {
 				System.out.println(p);
-				filteredListOfProducts.add(o);
+				filteredListOfProducts.add(p);
 			}
-		}
+		}*/
 		return filteredListOfProducts;
 	}
 	
@@ -85,9 +96,9 @@ public class ProductList {
 	 * @parameter is Product Type plus a filtering string
 	 * @return is a filtered list of ProductList object
 	 */
-	public ArrayList<Object> FilteredList(PRODUCT_TYPE pt, String filter)
+	public ArrayList<Product> FilteredList(PRODUCT_TYPE pt, String filter)
 	{
-		ArrayList<Object> filteredListOfProducts = new ArrayList<Object>();
+		ArrayList<Product> filteredListOfProducts = new ArrayList<Product>();
 
 		if (filter.isEmpty()) {
 			filteredListOfProducts = listOfProducts;
@@ -102,7 +113,7 @@ public class ProductList {
 		ProductList p = new ProductList(); 
 		
 		for(int i=0;i<p.listOfProducts.size();i++) {
-			System.out.println( p.listOfProducts.get(i) );
+			System.out.println(p.listOfProducts.get(i) );
 		}
 	
 	}

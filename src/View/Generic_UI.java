@@ -31,9 +31,9 @@ import java.awt.event.ActionEvent;
 
 public class Generic_UI extends Amazon_UI {
 	// Product List control values
-	private int index;
-	private ArrayList<Object> list;
-	private Product item;
+	public int index;
+	public ArrayList<Product> list;
+	public Product item;
 
 	// Definitions to support Labels
 	public JLabel lblImage;	
@@ -53,7 +53,9 @@ public class Generic_UI extends Amazon_UI {
 			public void run() {
 				try {
 					Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ALL,"");
-					frame.setVisible(true);
+					//frame.setVisible(true);
+					frame.setItem(PRODUCT_TYPE.CLOTHING, "shirt");
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -156,7 +158,7 @@ public class Generic_UI extends Amazon_UI {
 				index = (index+1) % list.size();
 				System.out.println(index);
 				item = (Product) list.get(index);
-				setText();
+				setText(item);
 			}
 		});
 		btnNext.setBounds(338, 40, 105, 23);
@@ -169,12 +171,12 @@ public class Generic_UI extends Amazon_UI {
 				index = index > 0 ? (index-1) : (list.size()-1);
 				System.out.println(index);
 				item = (Product) list.get(index);
-				setText();
+				setText(item);
 			}
 		});
 		
 		// set text for buttons
-		setText();
+		setText(item);
 		
 		btnPrevious.setBounds(339, 71, 104, 23);
 		getContentPane().add(btnPrevious);	
@@ -185,7 +187,7 @@ public class Generic_UI extends Amazon_UI {
 	/* 
 	 * One place for setting text
 	 */
-	private void setText() {
+	public void setText(Product item) {
 		// set text for buttons
 		txtrProduct.setText(item.toStringProduct());
 		txtrPrice.setText(item.toStringPrice());
@@ -206,7 +208,7 @@ public class Generic_UI extends Amazon_UI {
 	/*
 	 * logic for selection of current item to display
 	 */
-	private int setItem(PRODUCT_TYPE pt, String filter) {
+	public int setItem(PRODUCT_TYPE pt, String filter) {
 		int i = 0;
 		
 		if (pt == PRODUCT_TYPE.ALL) {
@@ -224,6 +226,5 @@ public class Generic_UI extends Amazon_UI {
 		}
 		return i;
 	}
-
 	
 }

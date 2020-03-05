@@ -50,18 +50,13 @@ public class ProductList {
 	 */
 	public ArrayList<Product> FilteredProductList(PRODUCT_TYPE pt) {
 		ArrayList<Product> filteredListOfProducts = new ArrayList<Product>();
-
-		for (int i = 0; i<11; i++) {
-			if (listOfProducts.get(i).getProductType() == pt)
-				filteredListOfProducts.add(listOfProducts.get(i));
-		}
 		
-		/*for (Product  o : listOfProducts ) {
+		for (Product  o : listOfProducts ) {
 			Product p = (Product) o;
 			if (p.getProductType() == pt) {
 				filteredListOfProducts.add(o);
 			}
-		}*/
+		}
 		return filteredListOfProducts;
 	}
 	
@@ -74,19 +69,13 @@ public class ProductList {
 	public ArrayList<Product> FilteredProductList(String filter) {
 		ArrayList<Product> filteredListOfProducts = new ArrayList<Product>();
 
-		for (int i = 0; i<11; i++) {
-			if (listOfProducts.get(i).toString().contains(filter))
-				filteredListOfProducts.add(listOfProducts.get(i));
-		}
-		System.out.print(filteredListOfProducts);
-		
-		/*for (Product  o : listOfProducts) {
+		for (Product  o : listOfProducts) {
 			Product p = (Product) o;
 			if (p.toString().contains(filter)) {
 				System.out.println(p);
 				filteredListOfProducts.add(p);
 			}
-		}*/
+		}
 		return filteredListOfProducts;
 	}
 	

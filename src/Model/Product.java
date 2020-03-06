@@ -4,7 +4,7 @@ public abstract class Product {
 	public static enum PRODUCT_TYPE {ALL, CLOTHING, ELECTRONICS, HOME, TOYS};
 	protected PRODUCT_TYPE product_type;
 	public String myType;
-	protected double myPrice;
+	public double myPrice;
 	protected int myQuantity;
 	public String myImage;
 	

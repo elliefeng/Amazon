@@ -15,6 +15,7 @@ import java.awt.Color;
 
 import Control.Cart;
 import Model.Product;
+import Model.Product.PRODUCT_TYPE;
 
 import javax.swing.JButton;
 	import javax.swing.JComboBox;
@@ -65,7 +66,7 @@ public class Cart_UI extends Amazon_UI {
 				text += Cart.CartList.get(i).toString() + "\n";
 			}
 			txtpnCart.setText(text);
-			txtpnCart.setBounds(51, 83, 596, 248);
+			txtpnCart.setBounds(51, 83, 383, 248);
 			getContentPane().add(txtpnCart);
 			
 			JButton btnNewButton = new JButton("Proceed to Payment");
@@ -73,6 +74,29 @@ public class Cart_UI extends Amazon_UI {
 			btnNewButton.setFont(new Font("Myanmar MN", Font.PLAIN, 20));
 			btnNewButton.setBounds(228, 338, 239, 55);
 			getContentPane().add(btnNewButton);
+			
+			JLabel lblPrice = new JLabel("Total Price: ");
+			double price=0;
+			for(int i=0;i<Cart.CartList.size();i++) {
+				price += Cart.CartList.get(i).myPrice;
+			}
+			lblPrice.setText("Total Price: " + price);
+			lblPrice.setFont(new Font("Myanmar MN", Font.PLAIN, 20));
+			lblPrice.setForeground(new Color(34, 139, 34));
+			lblPrice.setBounds(456, 243, 171, 48);
+			getContentPane().add(lblPrice);
+			JButton btnRemove = new JButton("Remove Last Product");
+			btnRemove.setForeground(new Color(34, 139, 34));
+			btnRemove.setFont(new Font("Myanmar MN", Font.PLAIN, 15));
+			btnRemove.setBounds(449, 122, 171, 68);
+			getContentPane().add(btnRemove);
+			btnRemove.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					txtpnCart.setText(Cart.CartList.remove(Cart.CartList.size()-1).toString());
+					
+				}
+			});
+
 			
 
 			

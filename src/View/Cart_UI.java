@@ -50,21 +50,29 @@ public class Cart_UI extends Amazon_UI {
 			getContentPane().setLayout(null);
 			
 			JLabel lblCart = new JLabel("My Cart");
-			lblCart.setBounds(273, 16, 106, 46);
+			lblCart.setForeground(new Color(34, 139, 34));
+			lblCart.setHorizontalAlignment(SwingConstants.CENTER);
+			lblCart.setBounds(284, 21, 122, 55);
 			lblCart.setFont(new Font("Myanmar MN", Font.PLAIN, 25));
 			lblCart.setOpaque(true);
-			lblCart.setBackground(new Color(34, 139, 34));
+			lblCart.setBackground(Color.WHITE);
 			getContentPane().add(lblCart);
 			
 			JTextPane txtpnCart = new JTextPane();
-			//txtpnCart.setText(Cart.CartList.toString());
-			ArrayList<Product> displayCart = new ArrayList<Product>();
+			txtpnCart.setForeground(new Color(34, 139, 34));
+			String text = "";
 			for(int i=0;i<Cart.CartList.size();i++) {
-				displayCart.add(Cart.CartList.get(i));
-				txtpnCart.setText(displayCart.toString()+"\n");
+				text += Cart.CartList.get(i).toString() + "\n";
 			}
-			txtpnCart.setBounds(51, 83, 596, 282);
+			txtpnCart.setText(text);
+			txtpnCart.setBounds(51, 83, 596, 248);
 			getContentPane().add(txtpnCart);
+			
+			JButton btnNewButton = new JButton("Proceed to Payment");
+			btnNewButton.setForeground(new Color(34, 139, 34));
+			btnNewButton.setFont(new Font("Myanmar MN", Font.PLAIN, 20));
+			btnNewButton.setBounds(228, 338, 239, 55);
+			getContentPane().add(btnNewButton);
 			
 
 			

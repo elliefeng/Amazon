@@ -53,7 +53,7 @@ public class Cart_UI extends Amazon_UI {
 			JLabel lblCart = new JLabel("My Cart");
 			lblCart.setForeground(new Color(34, 139, 34));
 			lblCart.setHorizontalAlignment(SwingConstants.CENTER);
-			lblCart.setBounds(284, 21, 122, 55);
+			lblCart.setBounds(291, 18, 122, 55);
 			lblCart.setFont(new Font("Myanmar MN", Font.PLAIN, 25));
 			lblCart.setOpaque(true);
 			lblCart.setBackground(Color.WHITE);

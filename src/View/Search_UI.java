@@ -81,18 +81,16 @@ public class Search_UI extends Amazon_UI {
 		btnShirt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Shirt");
-			     frame.lblImage.setIcon(new ImageIcon("src/nike.jpg")); 
 			     frame.setVisible(true); 
 			}
 		});
 		
-		JButton btnPants = new JButton("Pant");
+		JButton btnPants = new JButton("Pants");
 		btnPants.setBounds(6, 208, 117, 29);
 		panel.add(btnPants);
 		btnPants.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Pant");
-			     frame.lblImage.setIcon(new ImageIcon("src/pants.jpg")); 
+				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Pants");
 			     frame.setVisible(true); 
 			}
 		});
@@ -102,8 +100,7 @@ public class Search_UI extends Amazon_UI {
 		panel.add(btnShoes);
 		btnShoes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Shoe");
-			     frame.lblImage.setIcon(new ImageIcon("src/shoes.jpg")); 
+				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Shoes");
 			     frame.setVisible(true); 
 			}
 		});
@@ -138,29 +135,26 @@ public class Search_UI extends Amazon_UI {
 		btnPhone.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "Phone");
-			     frame.lblImage.setIcon(new ImageIcon("src/nokia.jpg")); 
 			     frame.setVisible(true); 
 			}
 		});
 		
-		JButton btnTv = new JButton("TV");
+		JButton btnTv = new JButton("Television");
 		btnTv.setBounds(6, 210, 117, 29);
 		panel1.add(btnTv);
 		btnTv.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "Television");
-			     frame.lblImage.setIcon(new ImageIcon("src/tv.jpg")); 
 			     frame.setVisible(true); 
 			}
 		});
 		
-		JButton btnComputer = new JButton("Computer");
+		JButton btnComputer = new JButton("Laptop");
 		btnComputer.setBounds(6, 342, 117, 29);
 		panel1.add(btnComputer);
 		btnComputer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "Computer");
-			     frame.lblImage.setIcon(new ImageIcon("src/computer.jpg")); 
+				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "Laptop");
 			     frame.setVisible(true); 
 			}
 		});
@@ -194,7 +188,6 @@ public class Search_UI extends Amazon_UI {
 		btnRubberChicken.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.TOYS, "Rubber Chicken");
-			     frame.lblImage.setIcon(new ImageIcon("src/rubberchicken.jpg")); 
 			     frame.setVisible(true); 
 			}
 		});
@@ -202,21 +195,19 @@ public class Search_UI extends Amazon_UI {
 		JButton btnStuffedAnimal = new JButton("Stuffed Animal");
 		btnStuffedAnimal.setBounds(0, 208, 124, 29);
 		panel2.add(btnStuffedAnimal);
-		btnShirt.addActionListener(new ActionListener() {
+		btnStuffedAnimal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.TOYS, "Stuffed Animal");
-			     frame.lblImage.setIcon(new ImageIcon("src/stuffedanimal.jpg")); 
 			     frame.setVisible(true); 
 			}
 		});
 		
-		JButton btnLegos = new JButton("Lego");
-		btnLegos.setBounds(7, 342, 117, 29);
+		JButton btnLegos = new JButton("Ninjago Dragon");
+		btnLegos.setBounds(0, 342, 124, 29);
 		panel2.add(btnLegos);
-		btnShirt.addActionListener(new ActionListener() {
+		btnLegos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.TOYS, "Lego");
-			     frame.lblImage.setIcon(new ImageIcon("src/lego.jpg")); 
+				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.TOYS, "Ninjago");
 			     frame.setVisible(true); 
 			}
 		});
@@ -240,13 +231,12 @@ public class Search_UI extends Amazon_UI {
 		tablepic.setIcon(new ImageIcon("src/table.jpg"));
 		panel3.add(tablepic);
 		
-		JButton btnCouch = new JButton("Couch");
+		JButton btnCouch = new JButton("Sofa");
 		btnCouch.setBounds(6, 91, 124, 29);
 		panel3.add(btnCouch);
 		btnCouch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.HOME, "Couch");
-			     frame.lblImage.setIcon(new ImageIcon("src/couch.jpg")); 
 			     frame.setVisible(true); 
 			}
 		});
@@ -257,7 +247,6 @@ public class Search_UI extends Amazon_UI {
 		btnTable.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				 Generic_UI frame = new Generic_UI(PRODUCT_TYPE.HOME, "Table");
-			     frame.lblImage.setIcon(new ImageIcon("src/table.jpg")); 
 			     frame.setVisible(true); 
 			}
 		});

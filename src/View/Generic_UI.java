@@ -54,8 +54,8 @@ public class Generic_UI extends Amazon_UI {
 			public void run() {
 				try {
 					Generic_UI frame = new Generic_UI(PRODUCT_TYPE.ALL,"");
-					//frame.setVisible(true);
-					frame.setItem(PRODUCT_TYPE.CLOTHING, "shirt");
+					frame.setVisible(true);
+					//frame.setItem(PRODUCT_TYPE.CLOTHING, "shirt");
 					
 				} catch (Exception e) {
 					e.printStackTrace();

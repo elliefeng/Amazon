@@ -21,36 +21,21 @@ public class SearchMain
     	switch(P.search) {
     	  //CLOTHING
     	  case "shirt":
-    		  /*Clothing_UI frame = new Clothing_UI("Shirt",19.99,"Teal");
-			  frame.setVisible(true);  */
     		  Generic_UI frame = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Shirt");
-    		  frame.index = frame.setItem(PRODUCT_TYPE.CLOTHING, "Shirt");
-    		  frame.item = (Product) frame.list.get(frame.index);
-    		  frame.setText(frame.item);
 		      frame.setVisible(true); 
     		  break;
-    	  case "pant":
-    		  /*Clothing_UI frame2 = new Clothing_UI("Pant",25.99,"Green");
-  			  frame2.setVisible(true);*/
-    		  Generic_UI frame1 = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Pant");
-    		  frame1.index = frame1.setItem(PRODUCT_TYPE.CLOTHING, "Pant");
-    		  frame1.item = (Product) frame1.list.get(frame1.index);
-    		  frame1.setText(frame1.item);
+    	  case "pants":
+    		  Generic_UI frame1 = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Pants");
 		      frame1.setVisible(true); 
   			break;
-    	  case "shoe":
-    		  /*Clothing_UI frame3 = new Clothing_UI("Shoe",30.99,"Black");
-  			  frame3.setVisible(true);  */
-    		  Generic_UI frame2 = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Shoe");
-    		  frame2.index = frame2.setItem(PRODUCT_TYPE.CLOTHING, "Shoe");
-    		  frame2.item = (Product) frame2.list.get(frame2.index);
-    		  frame2.setText(frame2.item);
+    	  case "shoes":
+    		  Generic_UI frame2 = new Generic_UI(PRODUCT_TYPE.CLOTHING, "Shoes");
 		      frame2.setVisible(true); 
   			break;
     	  
     	  //TOYS
-    	  case "lego":
-    		  Generic_UI frame6 = new Generic_UI(PRODUCT_TYPE.TOYS, "Lego");
+    	  case "ninjagodragon":
+    		  Generic_UI frame6 = new Generic_UI(PRODUCT_TYPE.TOYS, "Ninjago Dragon");
     		  frame6.setVisible(true);  
     		  break;
     	  case "stuffedanimal":
@@ -64,27 +49,21 @@ public class SearchMain
   			
   		  //ELECTRONICS
     	  case "phone":
-    		  /*Electronics_UI frame9 = new Electronics_UI("iPhone", 500.00, "Apple");
-			  frame9.setVisible(true); */
     		  Generic_UI frame9 = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "Phone");
     		  frame9.setVisible(true);
     		  break;
-    	  case "computer":
-    		  /*Electronics_UI frame10 = new Electronics_UI("Computer", 600.00, "Microsoft");
-  			  frame10.setVisible(true); */
-    		  Generic_UI frame10 = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "Computer");
+    	  case "laptop":
+    		  Generic_UI frame10 = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "Laptop");
 			  frame10.setVisible(true);
   			  break;
-    	  case "tv":
-    		  /*Electronics_UI frame11 = new Electronics_UI("TV", 800.00, "Sony");
-  			  frame11.setVisible(true); */
+    	  case "television":
     		  Generic_UI frame11 = new Generic_UI(PRODUCT_TYPE.ELECTRONICS, "Television");
 			  frame11.setVisible(true);
   			break;
     	  
     	  //HOME
-    	  case "couch":
-    		  Generic_UI frame12 = new Generic_UI(PRODUCT_TYPE.HOME, "Couch");
+    	  case "sofa":
+    		  Generic_UI frame12 = new Generic_UI(PRODUCT_TYPE.HOME, "Sofa");
     		  frame12.setVisible(true);  
     		  break;
     	  case "table":
